@@ -13,107 +13,107 @@
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #0b0f19;
-            color: #f3f4f6;
+            background-color: #ffffff;
+            color: #0f172a;
         }
         .bg-grid {
             background-size: 40px 40px;
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
         }
         .glow-accent {
-            box-shadow: 0 0 40px -10px rgba(14, 165, 233, 0.25);
+            box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
-<body class="bg-grid antialiased selection:bg-cyan-500 selection:text-white">
+<body class="bg-grid antialiased selection:bg-black selection:text-white">
 
     <!-- BARRA DE NAVEGACIÓN -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-[#0b0f19]/90 backdrop-blur-md border-b border-slate-800">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="#inicio" class="flex items-center gap-3 group">
-                <!-- Logotipo integrado con respaldo de texto si no carga la imagen -->
+                <!-- Logotipo -->
                 <div class="flex items-center h-10">
                     <img src="logo.png" alt="CUSTOMTECH Logo" class="h-9 w-auto object-contain group-hover:scale-105 transition-transform" onerror="this.style.display='none'; document.getElementById('fallback-logo').style.display='flex';">
                     <div id="fallback-logo" style="display:none;" class="items-center gap-2">
-                        <div class="w-9 h-9 bg-cyan-500 rounded-lg flex items-center justify-center font-black text-slate-950 text-base tracking-tighter">CT</div>
-                        <span class="text-lg font-extrabold tracking-wider text-white">CUSTOM<span class="text-cyan-400">TECH</span></span>
+                        <div class="w-9 h-9 bg-black rounded-lg flex items-center justify-center font-black text-white text-base tracking-tighter">CT</div>
+                        <span class="text-lg font-extrabold tracking-wider text-black">CUSTOM<span class="text-gray-600">TECH</span></span>
                     </div>
                 </div>
             </a>
             
-            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-300">
-                <a href="#inicio" class="hover:text-cyan-400 transition-colors">Inicio</a>
-                <a href="#capacidades" class="hover:text-cyan-400 transition-colors">Capacidades & Materiales</a>
-                <a href="#triptico" class="hover:text-cyan-400 transition-colors">Tríptico I+D</a>
-                <a href="#galeria" class="hover:text-cyan-400 transition-colors">Galería</a>
-                <a href="#clientes" class="hover:text-cyan-400 transition-colors">Clientes</a>
-                <a href="#contacto" class="hover:text-cyan-400 transition-colors">Contacto</a>
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-700">
+                <a href="#inicio" class="hover:text-black transition-colors">Inicio</a>
+                <a href="#capacidades" class="hover:text-black transition-colors">Capacidades & Materiales</a>
+                <a href="#triptico" class="hover:text-black transition-colors">Tríptico I+D</a>
+                <a href="#galeria" class="hover:text-black transition-colors">Galería</a>
+                <a href="#clientes" class="hover:text-black transition-colors">Clientes</a>
+                <a href="#contacto" class="hover:text-black transition-colors">Contacto</a>
             </nav>
 
             <div class="flex items-center gap-4">
-                <a href="https://wa.me/56984029443" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2.5 rounded-xl font-semibold text-sm transition-all shadow-lg shadow-emerald-900/30">
-                    <i class="fab fa-whatsapp text-lg"></i> +56 9 8402 9443
+                <a href="https://wa.me/56984029443" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-black hover:bg-gray-800 text-white px-4 py-2.5 rounded-xl font-semibold text-sm transition-all shadow-md">
+                    <i class="fab fa-whatsapp text-lg text-emerald-400"></i> +56 9 8402 9443
                 </a>
                 <!-- Botón Menú Móvil -->
-                <button id="menu-btn" class="md:hidden text-slate-300 hover:text-white p-2 focus:outline-none">
+                <button id="menu-btn" class="md:hidden text-gray-800 hover:text-black p-2 focus:outline-none">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
 
         <!-- Menú Móvil desplegable -->
-        <div id="mobile-menu" class="hidden md:hidden bg-[#0b0f19] border-b border-slate-800 px-6 py-4 space-y-3">
-            <a href="#inicio" class="block text-slate-300 hover:text-cyan-400 font-medium">Inicio</a>
-            <a href="#capacidades" class="block text-slate-300 hover:text-cyan-400 font-medium">Capacidades & Materiales</a>
-            <a href="#triptico" class="block text-slate-300 hover:text-cyan-400 font-medium">Tríptico I+D</a>
-            <a href="#galeria" class="block text-slate-300 hover:text-cyan-400 font-medium">Galería</a>
-            <a href="#clientes" class="block text-slate-300 hover:text-cyan-400 font-medium">Clientes</a>
-            <a href="#contacto" class="block text-slate-300 hover:text-cyan-400 font-medium">Contacto</a>
-            <a href="https://wa.me/56984029443" target="_blank" class="flex items-center justify-center gap-2 bg-emerald-600 text-white w-full py-2.5 rounded-xl font-semibold text-sm mt-2">
-                <i class="fab fa-whatsapp text-lg"></i> WhatsApp Directo
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-6 py-4 space-y-3">
+            <a href="#inicio" class="block text-gray-700 hover:text-black font-medium">Inicio</a>
+            <a href="#capacidades" class="block text-gray-700 hover:text-black font-medium">Capacidades & Materiales</a>
+            <a href="#triptico" class="block text-gray-700 hover:text-black font-medium">Tríptico I+D</a>
+            <a href="#galeria" class="block text-gray-700 hover:text-black font-medium">Galería</a>
+            <a href="#clientes" class="block text-gray-700 hover:text-black font-medium">Clientes</a>
+            <a href="#contacto" class="block text-gray-700 hover:text-black font-medium">Contacto</a>
+            <a href="https://wa.me/56984029443" target="_blank" class="flex items-center justify-center gap-2 bg-black text-white w-full py-2.5 rounded-xl font-semibold text-sm mt-2">
+                <i class="fab fa-whatsapp text-lg text-emerald-400"></i> WhatsApp Directo
             </a>
         </div>
     </header>
 
     <!-- SECCIÓN INICIO / HERO -->
-    <section id="inicio" class="pt-32 pb-20 md:pt-44 md:pb-32 relative overflow-hidden">
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <section id="inicio" class="pt-32 pb-20 md:pt-44 md:pb-32 relative overflow-hidden bg-white">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gray-100 rounded-full blur-3xl pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/30 px-3.5 py-1.5 rounded-full text-cyan-400 text-xs font-semibold tracking-wide uppercase">
+                    <div class="inline-flex items-center gap-2 bg-gray-100 border border-gray-300 px-3.5 py-1.5 rounded-full text-black text-xs font-semibold tracking-wide uppercase">
                         <i class="fas fa-microchip"></i> Ingeniería y Fabricación a Medida
                     </div>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-                        Equipos custom-made para <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">I+D e Innovación</span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-black leading-tight">
+                        Equipos custom-made para <span class="underline decoration-black decoration-2">I+D e Innovación</span>
                     </h1>
-                    <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                    <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
                         Diseño y fabricación de equipos personalizados para investigación, experimentación y pilotaje de proyectos. Colaboramos estrechamente contigo desde el concepto hasta el despacho para crear herramientas innovadoras y de alta precisión.
                     </p>
                     <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                        <a href="#contacto" class="w-full sm:w-auto bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-8 py-4 rounded-xl transition-all shadow-lg shadow-cyan-500/20 text-center">
+                        <a href="#contacto" class="w-full sm:w-auto bg-black hover:bg-gray-800 text-white font-bold px-8 py-4 rounded-xl transition-all shadow-lg text-center">
                             Solicitar Cotización <i class="fas fa-arrow-right ml-2"></i>
                         </a>
-                        <a href="https://wa.me/56984029443" target="_blank" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-white font-semibold px-8 py-4 rounded-xl transition-all border border-slate-700 text-center flex items-center justify-center gap-2">
-                            <i class="fab fa-whatsapp text-emerald-400 text-xl"></i> Escríbenos por WhatsApp
+                        <a href="https://wa.me/56984029443" target="_blank" class="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 text-black font-semibold px-8 py-4 rounded-xl transition-all border border-gray-300 text-center flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp text-emerald-600 text-xl"></i> Escríbenos por WhatsApp
                         </a>
                     </div>
                 </div>
                 <div class="lg:col-span-5">
                     <div class="relative mx-auto max-w-md lg:max-w-none">
-                        <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl blur-lg opacity-30"></div>
-                        <div class="relative bg-slate-900 border border-slate-800 rounded-2xl p-6 glow-accent">
-                            <div class="flex items-center justify-between mb-4 pb-4 border-b border-slate-800">
-                                <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest">CUSTOMTECH LAB</span>
+                        <div class="absolute -inset-1 bg-gray-300 rounded-2xl blur-lg opacity-30"></div>
+                        <div class="relative bg-white border border-gray-200 rounded-2xl p-6 shadow-xl glow-accent">
+                            <div class="flex items-center justify-between mb-4 pb-4 border-b border-gray-200">
+                                <span class="text-xs font-bold text-black uppercase tracking-widest">CUSTOMTECH LAB</span>
                                 <div class="flex gap-1.5">
-                                    <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
-                                    <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                                    <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+                                    <div class="w-3 h-3 rounded-full bg-gray-300"></div>
+                                    <div class="w-3 h-3 rounded-full bg-gray-400"></div>
+                                    <div class="w-3 h-3 rounded-full bg-black"></div>
                                 </div>
                             </div>
-                            <img src="Imagen002.png" alt="Sistema modular CUSTOMTECH" class="rounded-xl object-cover w-full h-72 shadow-md mb-4 border border-slate-800" onerror="this.src='https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80'">
-                            <p class="text-sm text-slate-400 italic text-center">"Herramientas de alta precisión para investigación de procesos industriales y mineros."</p>
+                            <img src="Imagen002.png" alt="Sistema modular CUSTOMTECH" class="rounded-xl object-cover w-full h-72 shadow-md mb-4 border border-gray-200" onerror="this.src='https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80'">
+                            <p class="text-sm text-gray-500 italic text-center">"Herramientas de alta precisión para investigación de procesos industriales y mineros."</p>
                         </div>
                     </div>
                 </div>
@@ -122,42 +122,42 @@
     </section>
 
     <!-- CAPACIDADES & MATERIALES -->
-    <section id="capacidades" class="py-20 bg-slate-900/50 border-y border-slate-800/80">
+    <section id="capacidades" class="py-20 bg-gray-50 border-y border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Capacidades & Materiales</h2>
-                <p class="text-slate-300 text-base">
+                <h2 class="text-3xl sm:text-4xl font-bold text-black tracking-tight">Capacidades & Materiales</h2>
+                <p class="text-gray-600 text-base">
                     Trabajamos un amplio espectro de procesos mecánicos, manuales y materiales técnicos para garantizar resistencia química, transparencia óptica y precisión dimensional.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl hover:border-cyan-500/50 transition-colors">
-                    <div class="w-12 h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center text-cyan-400 text-xl font-bold mb-4">
+                <div class="bg-white border border-gray-200 p-6 rounded-2xl hover:border-black transition-colors shadow-sm">
+                    <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-black text-xl font-bold mb-4">
                         <i class="fas fa-cogs"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Procesos Mecánicos</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">
+                    <h3 class="text-lg font-bold text-black mb-2">Procesos Mecánicos</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
                         Mecanizado CNC, torneado de precisión, termoformado de polímeros, fresado, soldadura plástica y ensamblajes complejos a medida.
                     </p>
                 </div>
 
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl hover:border-cyan-500/50 transition-colors">
-                    <div class="w-12 h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center text-cyan-400 text-xl font-bold mb-4">
+                <div class="bg-white border border-gray-200 p-6 rounded-2xl hover:border-black transition-colors shadow-sm">
+                    <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-black text-xl font-bold mb-4">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Polímeros & Resinas</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">
+                    <h3 class="text-lg font-bold text-black mb-2">Polímeros & Resinas</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
                         Policarbonato, Acrílicos de alta transparencia, PVC, HDP, Teflón, Resinas Epoxi, Poliéster, Poliuretano y Fibras especiales.
                     </p>
                 </div>
 
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl hover:border-cyan-500/50 transition-colors">
-                    <div class="w-12 h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center text-cyan-400 text-xl font-bold mb-4">
+                <div class="bg-white border border-gray-200 p-6 rounded-2xl hover:border-black transition-colors shadow-sm">
+                    <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-black text-xl font-bold mb-4">
                         <i class="fas fa-cubes"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Metales & Compuestos</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">
+                    <h3 class="text-lg font-bold text-black mb-2">Metales & Compuestos</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
                         Aluminio, Bronce, Cobre, Acero inoxidable (AISI 316L), Vidrio de laboratorio y Cuarzo para aplicaciones exigentes en I+D.
                     </p>
                 </div>
@@ -166,92 +166,92 @@
     </section>
 
     <!-- SECCIÓN TRÍPTICO I+D -->
-    <section id="triptico" class="py-20 bg-[#0b0f19]">
+    <section id="triptico" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <span class="text-cyan-400 text-xs font-bold tracking-widest uppercase bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">Proyectos Destacados</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Tríptico I+D e Innovación</h2>
-                <p class="text-slate-300 text-base">
+                <span class="text-black text-xs font-bold tracking-widest uppercase bg-gray-100 px-3 py-1 rounded-full border border-gray-300">Proyectos Destacados</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-black tracking-tight">Tríptico I+D e Innovación</h2>
+                <p class="text-gray-600 text-base">
                     Soluciones experimentales desarrolladas para universidades, centros tecnológicos y la industria minera nacional e internacional.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Item 1 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group">
-                    <div class="h-48 overflow-hidden relative bg-slate-950">
+                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden group shadow-sm hover:shadow-md transition-all">
+                    <div class="h-48 overflow-hidden relative bg-gray-100">
                         <img src="Imagen003.png" alt="Molino SAG" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute top-3 left-3 bg-slate-900/90 backdrop-blur px-2.5 py-1 rounded-lg text-xs font-semibold text-cyan-400">Prototipo</div>
+                        <div class="absolute top-3 left-3 bg-white/90 backdrop-blur px-2.5 py-1 rounded-lg text-xs font-semibold text-black border border-gray-200">Prototipo</div>
                     </div>
                     <div class="p-6 space-y-2">
-                        <h3 class="text-lg font-bold text-white">Molino SAG para Minería</h3>
-                        <p class="text-xs text-cyan-400 font-medium">Termoformado y corte en Acrílico, Technyl y Acero</p>
-                        <p class="text-sm text-slate-400">Desarrollado para pruebas experimentales de conminución y molienda a escala de laboratorio.</p>
+                        <h3 class="text-lg font-bold text-black">Molino SAG para Minería</h3>
+                        <p class="text-xs text-gray-700 font-medium">Termoformado y corte en Acrílico, Technyl y Acero</p>
+                        <p class="text-sm text-gray-600">Desarrollado para pruebas experimentales de conminución y molienda a escala de laboratorio.</p>
                     </div>
                 </div>
 
                 <!-- Item 2 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group">
-                    <div class="h-48 overflow-hidden relative bg-slate-950">
+                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden group shadow-sm hover:shadow-md transition-all">
+                    <div class="h-48 overflow-hidden relative bg-gray-100">
                         <img src="Imagen005.png" alt="Cristalizador USACH" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute top-3 left-3 bg-slate-900/90 backdrop-blur px-2.5 py-1 rounded-lg text-xs font-semibold text-cyan-400">USACH</div>
+                        <div class="absolute top-3 left-3 bg-white/90 backdrop-blur px-2.5 py-1 rounded-lg text-xs font-semibold text-black border border-gray-200">USACH</div>
                     </div>
                     <div class="p-6 space-y-2">
-                        <h3 class="text-lg font-bold text-white">Cristalizador de Doble Camisa</h3>
-                        <p class="text-xs text-cyan-400 font-medium">Control de Temperatura & Instrumentación</p>
-                        <p class="text-sm text-slate-400">Reactor especializado con control térmico y conexión directa a sistemas de adquisición de datos internos.</p>
+                        <h3 class="text-lg font-bold text-black">Cristalizador de Doble Camisa</h3>
+                        <p class="text-xs text-gray-700 font-medium">Control de Temperatura & Instrumentación</p>
+                        <p class="text-sm text-gray-600">Reactor especializado con control térmico y conexión directa a sistemas de adquisición de datos internos.</p>
                     </div>
                 </div>
 
                 <!-- Item 3 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group">
-                    <div class="h-48 overflow-hidden relative bg-slate-950">
+                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden group shadow-sm hover:shadow-md transition-all">
+                    <div class="h-48 overflow-hidden relative bg-gray-100">
                         <img src="Imagen007.png" alt="Experimento de Darcy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute top-3 left-3 bg-slate-900/90 backdrop-blur px-2.5 py-1 rounded-lg text-xs font-semibold text-cyan-400">U. Santa María</div>
+                        <div class="absolute top-3 left-3 bg-white/90 backdrop-blur px-2.5 py-1 rounded-lg text-xs font-semibold text-black border border-gray-200">U. Santa María</div>
                     </div>
                     <div class="p-6 space-y-2">
-                        <h3 class="text-lg font-bold text-white">Experimento de Darcy</h3>
-                        <p class="text-xs text-cyan-400 font-medium">Equipos y Reactores Hidráulicos</p>
-                        <p class="text-sm text-slate-400">Banco experimental fabricado para el estudio detallado del paso de fluidos a través de distintos medios porosos.</p>
+                        <h3 class="text-lg font-bold text-black">Experimento de Darcy</h3>
+                        <p class="text-xs text-gray-700 font-medium">Equipos y Reactores Hidráulicos</p>
+                        <p class="text-sm text-gray-600">Banco experimental fabricado para el estudio detallado del paso de fluidos a través de distintos medios porosos.</p>
                     </div>
                 </div>
 
                 <!-- Item 4 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group">
-                    <div class="h-48 overflow-hidden relative bg-slate-950">
+                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden group shadow-sm hover:shadow-md transition-all">
+                    <div class="h-48 overflow-hidden relative bg-gray-100">
                         <img src="Imagen008.png" alt="U. de Chile" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute top-3 left-3 bg-slate-900/90 backdrop-blur px-2.5 py-1 rounded-lg text-xs font-semibold text-cyan-400">U. de Chile</div>
+                        <div class="absolute top-3 left-3 bg-white/90 backdrop-blur px-2.5 py-1 rounded-lg text-xs font-semibold text-black border border-gray-200">U. de Chile</div>
                     </div>
                     <div class="p-6 space-y-2">
-                        <h3 class="text-lg font-bold text-white">Pieza de Equipo Experimental</h3>
-                        <p class="text-xs text-cyan-400 font-medium">Acrílico Técnico & Sensores</p>
-                        <p class="text-sm text-slate-400">Cámara cilíndrica transparente con puertos instrumentados para análisis electroquímico y de soluciones.</p>
+                        <h3 class="text-lg font-bold text-black">Pieza de Equipo Experimental</h3>
+                        <p class="text-xs text-gray-700 font-medium">Acrílico Técnico & Sensores</p>
+                        <p class="text-sm text-gray-600">Cámara cilíndrica transparente con puertos instrumentados para análisis electroquímico y de soluciones.</p>
                     </div>
                 </div>
 
                 <!-- Item 5 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group">
-                    <div class="h-48 overflow-hidden relative bg-slate-950">
+                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden group shadow-sm hover:shadow-md transition-all">
+                    <div class="h-48 overflow-hidden relative bg-gray-100">
                         <img src="Imagen014.png" alt="AMINPRO" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute top-3 left-3 bg-slate-900/90 backdrop-blur px-2.5 py-1 rounded-lg text-xs font-semibold text-cyan-400">AMINPRO</div>
+                        <div class="absolute top-3 left-3 bg-white/90 backdrop-blur px-2.5 py-1 rounded-lg text-xs font-semibold text-black border border-gray-200">AMINPRO</div>
                     </div>
                     <div class="p-6 space-y-2">
-                        <h3 class="text-lg font-bold text-white">Columna de 4 Metros</h3>
-                        <p class="text-xs text-cyan-400 font-medium">Flotación de Minerales</p>
-                        <p class="text-sm text-slate-400">Sistema modular de columnas de gran altura instalado en planta piloto para pruebas metalúrgicas a escala real.</p>
+                        <h3 class="text-lg font-bold text-black">Columna de 4 Metros</h3>
+                        <p class="text-xs text-gray-700 font-medium">Flotación de Minerales</p>
+                        <p class="text-sm text-gray-600">Sistema modular de columnas de gran altura instalado en planta piloto para pruebas metalúrgicas a escala real.</p>
                     </div>
                 </div>
 
                 <!-- Item 6 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group">
-                    <div class="h-48 overflow-hidden relative bg-slate-950">
+                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden group shadow-sm hover:shadow-md transition-all">
+                    <div class="h-48 overflow-hidden relative bg-gray-100">
                         <img src="Imagen006.png" alt="Mistop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute top-3 left-3 bg-slate-900/90 backdrop-blur px-2.5 py-1 rounded-lg text-xs font-semibold text-cyan-400">Expomin</div>
+                        <div class="absolute top-3 left-3 bg-white/90 backdrop-blur px-2.5 py-1 rounded-lg text-xs font-semibold text-black border border-gray-200">Expomin</div>
                     </div>
                     <div class="p-6 space-y-2">
-                        <h3 class="text-lg font-bold text-white">Electrocelda Mistop®</h3>
-                        <p class="text-xs text-cyan-400 font-medium">Estudios de Niebla Ácida</p>
-                        <p class="text-sm text-slate-400">Equipo especializado para electrometalurgia presentado en Expomin, optimizado para la supresión de neblinas y control ambiental.</p>
+                        <h3 class="text-lg font-bold text-black">Electrocelda Mistop®</h3>
+                        <p class="text-xs text-gray-700 font-medium">Estudios de Niebla Ácida</p>
+                        <p class="text-sm text-gray-600">Equipo especializado para electrometalurgia presentado en Expomin, optimizado para la supresión de neblinas y control ambiental.</p>
                     </div>
                 </div>
             </div>
@@ -259,126 +259,126 @@
     </section>
 
     <!-- GALERÍA DE TRABAJOS (MINIATURAS CON MODAL AL CLIC) -->
-    <section id="galeria" class="py-20 bg-slate-900/50 border-y border-slate-800/80">
+    <section id="galeria" class="py-20 bg-gray-50 border-y border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
-                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Galería de Trabajos</h2>
-                <p class="text-slate-300 text-base">
+                <h2 class="text-3xl sm:text-4xl font-bold text-black tracking-tight">Galería de Trabajos</h2>
+                <p class="text-gray-600 text-base">
                     Haz clic en cualquier miniatura para ampliar la imagen y ver los detalles del equipo fabricado.
                 </p>
                 
                 <!-- Filtros -->
                 <div class="flex flex-wrap justify-center gap-2 pt-4">
-                    <button class="filter-btn active bg-cyan-500 text-slate-950 px-4 py-2 rounded-xl text-xs font-bold transition-all" data-filter="all">Todos</button>
-                    <button class="filter-btn bg-slate-800 text-slate-300 hover:text-white px-4 py-2 rounded-xl text-xs font-semibold transition-all" data-filter="pilotos">Plantas Piloto & Columnas</button>
-                    <button class="filter-btn bg-slate-800 text-slate-300 hover:text-white px-4 py-2 rounded-xl text-xs font-semibold transition-all" data-filter="celdas">Celdas de Ensayo</button>
-                    <button class="filter-btn bg-slate-800 text-slate-300 hover:text-white px-4 py-2 rounded-xl text-xs font-semibold transition-all" data-filter="componentes">Manifolds & Acrílicos</button>
+                    <button class="filter-btn active bg-black text-white px-4 py-2 rounded-xl text-xs font-bold transition-all" data-filter="all">Todos</button>
+                    <button class="filter-btn bg-gray-200 text-gray-800 hover:text-black px-4 py-2 rounded-xl text-xs font-semibold transition-all" data-filter="pilotos">Plantas Piloto & Columnas</button>
+                    <button class="filter-btn bg-gray-200 text-gray-800 hover:text-black px-4 py-2 rounded-xl text-xs font-semibold transition-all" data-filter="celdas">Celdas de Ensayo</button>
+                    <button class="filter-btn bg-gray-200 text-gray-800 hover:text-black px-4 py-2 rounded-xl text-xs font-semibold transition-all" data-filter="componentes">Manifolds & Acrílicos</button>
                 </div>
             </div>
 
             <!-- Grid de Miniaturas -->
             <div id="gallery-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
                 <!-- Miniatura 1 -->
-                <div class="gallery-item bg-slate-900 border border-slate-800 rounded-xl overflow-hidden group cursor-pointer hover:border-cyan-500/50 transition-all shadow-md" data-category="pilotos" onclick="openModal('Imagen002.png', 'Planta de Flotación en Columna', 'Estructura modular de acero con columnas de acrílico técnico de alta transparencia y manifold de distribución.')">
-                    <div class="h-44 overflow-hidden relative bg-slate-950">
+                <div class="gallery-item bg-white border border-gray-200 rounded-xl overflow-hidden group cursor-pointer hover:border-black transition-all shadow-sm" data-category="pilotos" onclick="openModal('Imagen002.png', 'Planta de Flotación en Columna', 'Estructura modular de acero con columnas de acrílico técnico de alta transparencia y manifold de distribución.')">
+                    <div class="h-44 overflow-hidden relative bg-gray-100">
                         <img src="Imagen002.png" alt="Planta de Flotación" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="w-10 h-10 bg-cyan-500 text-slate-950 rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
                         </div>
                     </div>
                     <div class="p-3 text-center">
-                        <h3 class="text-xs font-bold text-white truncate">Planta de Flotación</h3>
+                        <h3 class="text-xs font-bold text-gray-900 truncate">Planta de Flotación</h3>
                     </div>
                 </div>
 
                 <!-- Miniatura 2 -->
-                <div class="gallery-item bg-slate-900 border border-slate-800 rounded-xl overflow-hidden group cursor-pointer hover:border-cyan-500/50 transition-all shadow-md" data-category="celdas" onclick="openModal('Imagen003.png', 'Celda Hydrofloat de Laboratorio', 'Cuerpo cilíndrico en acrílico termoconformado con base de acero inoxidable AISI 316L e instrumentación.')">
-                    <div class="h-44 overflow-hidden relative bg-slate-950">
+                <div class="gallery-item bg-white border border-gray-200 rounded-xl overflow-hidden group cursor-pointer hover:border-black transition-all shadow-sm" data-category="celdas" onclick="openModal('Imagen003.png', 'Celda Hydrofloat de Laboratorio', 'Cuerpo cilíndrico en acrílico termoconformado con base de acero inoxidable AISI 316L e instrumentación.')">
+                    <div class="h-44 overflow-hidden relative bg-gray-100">
                         <img src="Imagen003.png" alt="Celda Hydrofloat" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="w-10 h-10 bg-cyan-500 text-slate-950 rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
                         </div>
                     </div>
                     <div class="p-3 text-center">
-                        <h3 class="text-xs font-bold text-white truncate">Celda Hydrofloat</h3>
+                        <h3 class="text-xs font-bold text-gray-900 truncate">Celda Hydrofloat</h3>
                     </div>
                 </div>
 
                 <!-- Miniatura 3 -->
-                <div class="gallery-item bg-slate-900 border border-slate-800 rounded-xl overflow-hidden group cursor-pointer hover:border-cyan-500/50 transition-all shadow-md" data-category="pilotos" onclick="openModal('Imagen004.png', 'Columna de Experimentación con Panel', 'Columna de nivel con tablero de instrumentación y control neumático y de flujos integrado.')">
-                    <div class="h-44 overflow-hidden relative bg-slate-950">
+                <div class="gallery-item bg-white border border-gray-200 rounded-xl overflow-hidden group cursor-pointer hover:border-black transition-all shadow-sm" data-category="pilotos" onclick="openModal('Imagen004.png', 'Columna de Experimentación con Panel', 'Columna de nivel con tablero de instrumentación y control neumático y de flujos integrado.')">
+                    <div class="h-44 overflow-hidden relative bg-gray-100">
                         <img src="Imagen004.png" alt="Columna con Panel" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="w-10 h-10 bg-cyan-500 text-slate-950 rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
                         </div>
                     </div>
                     <div class="p-3 text-center">
-                        <h3 class="text-xs font-bold text-white truncate">Columna con Panel</h3>
+                        <h3 class="text-xs font-bold text-gray-900 truncate">Columna con Panel</h3>
                     </div>
                 </div>
 
                 <!-- Miniatura 4 -->
-                <div class="gallery-item bg-slate-900 border border-slate-800 rounded-xl overflow-hidden group cursor-pointer hover:border-cyan-500/50 transition-all shadow-md" data-category="componentes" onclick="openModal('Imagen005.png', 'Ensamblaje Superior y Electrodos', 'Estructura prismática con acrílico y componentes de cobre mecanizado para pruebas electroquímicas.')">
-                    <div class="h-44 overflow-hidden relative bg-slate-950">
+                <div class="gallery-item bg-white border border-gray-200 rounded-xl overflow-hidden group cursor-pointer hover:border-black transition-all shadow-sm" data-category="componentes" onclick="openModal('Imagen005.png', 'Ensamblaje Superior y Electrodos', 'Estructura prismática con acrílico y componentes de cobre mecanizado para pruebas electroquímicas.')">
+                    <div class="h-44 overflow-hidden relative bg-gray-100">
                         <img src="Imagen005.png" alt="Ensamblaje Superior" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="w-10 h-10 bg-cyan-500 text-slate-950 rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
                         </div>
                     </div>
                     <div class="p-3 text-center">
-                        <h3 class="text-xs font-bold text-white truncate">Ensamblaje Superior</h3>
+                        <h3 class="text-xs font-bold text-gray-900 truncate">Ensamblaje Superior</h3>
                     </div>
                 </div>
 
                 <!-- Miniatura 5 -->
-                <div class="gallery-item bg-slate-900 border border-slate-800 rounded-xl overflow-hidden group cursor-pointer hover:border-cyan-500/50 transition-all shadow-md" data-category="celdas" onclick="openModal('Imagen006.png', 'Electrocelda Mistop en Exhibición', 'Celda especializada montada en módulo de demostración para control de niebla ácida en minería.')">
-                    <div class="h-44 overflow-hidden relative bg-slate-950">
+                <div class="gallery-item bg-white border border-gray-200 rounded-xl overflow-hidden group cursor-pointer hover:border-black transition-all shadow-sm" data-category="celdas" onclick="openModal('Imagen006.png', 'Electrocelda Mistop en Exhibición', 'Celda especializada montada en módulo de demostración para control de niebla ácida en minería.')">
+                    <div class="h-44 overflow-hidden relative bg-gray-100">
                         <img src="Imagen006.png" alt="Electrocelda Mistop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="w-10 h-10 bg-cyan-500 text-slate-950 rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
                         </div>
                     </div>
                     <div class="p-3 text-center">
-                        <h3 class="text-xs font-bold text-white truncate">Electrocelda Mistop</h3>
+                        <h3 class="text-xs font-bold text-gray-900 truncate">Electrocelda Mistop</h3>
                     </div>
                 </div>
 
                 <!-- Miniatura 6 -->
-                <div class="gallery-item bg-slate-900 border border-slate-800 rounded-xl overflow-hidden group cursor-pointer hover:border-cyan-500/50 transition-all shadow-md" data-category="componentes" onclick="openModal('Imagen007.png', 'Manifold Multilínea de Precisión', 'Cilindro de acrílico con múltiples llaves de paso y conexiones neumáticas para control de fluidos.')">
-                    <div class="h-44 overflow-hidden relative bg-slate-950">
+                <div class="gallery-item bg-white border border-gray-200 rounded-xl overflow-hidden group cursor-pointer hover:border-black transition-all shadow-sm" data-category="componentes" onclick="openModal('Imagen007.png', 'Manifold Multilínea de Precisión', 'Cilindro de acrílico con múltiples llaves de paso y conexiones neumáticas para control de fluidos.')">
+                    <div class="h-44 overflow-hidden relative bg-gray-100">
                         <img src="Imagen007.png" alt="Manifold Multilínea" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="w-10 h-10 bg-cyan-500 text-slate-950 rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
                         </div>
                     </div>
                     <div class="p-3 text-center">
-                        <h3 class="text-xs font-bold text-white truncate">Manifold Multilínea</h3>
+                        <h3 class="text-xs font-bold text-gray-900 truncate">Manifold Multilínea</h3>
                     </div>
                 </div>
 
                 <!-- Miniatura 7 -->
-                <div class="gallery-item bg-slate-900 border border-slate-800 rounded-xl overflow-hidden group cursor-pointer hover:border-cyan-500/50 transition-all shadow-md" data-category="pilotos" onclick="openModal('Imagen01.png', 'Columnas Modulares Apilables', 'Módulos cilíndricos transparentes intercambiables con flanges de alta resistencia.')">
-                    <div class="h-44 overflow-hidden relative bg-slate-950">
+                <div class="gallery-item bg-white border border-gray-200 rounded-xl overflow-hidden group cursor-pointer hover:border-black transition-all shadow-sm" data-category="pilotos" onclick="openModal('Imagen01.png', 'Columnas Modulares Apilables', 'Módulos cilíndricos transparentes intercambiables con flanges de alta resistencia.')">
+                    <div class="h-44 overflow-hidden relative bg-gray-100">
                         <img src="Imagen01.png" alt="Columnas Modulares" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="w-10 h-10 bg-cyan-500 text-slate-950 rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
                         </div>
                     </div>
                     <div class="p-3 text-center">
-                        <h3 class="text-xs font-bold text-white truncate">Columnas Modulares</h3>
+                        <h3 class="text-xs font-bold text-gray-900 truncate">Columnas Modulares</h3>
                     </div>
                 </div>
 
                 <!-- Miniatura 8 -->
-                <div class="gallery-item bg-slate-900 border border-slate-800 rounded-xl overflow-hidden group cursor-pointer hover:border-cyan-500/50 transition-all shadow-md" data-category="componentes" onclick="openModal('Imagen010.png', 'Cilindros de Extracción con Inserciones', 'Tubos de acrílico técnico con niples de acero inoxidable integrados para inyección y muestreo.')">
-                    <div class="h-44 overflow-hidden relative bg-slate-950">
+                <div class="gallery-item bg-white border border-gray-200 rounded-xl overflow-hidden group cursor-pointer hover:border-black transition-all shadow-sm" data-category="componentes" onclick="openModal('Imagen010.png', 'Cilindros de Extracción con Inserciones', 'Tubos de acrílico técnico con niples de acero inoxidable integrados para inyección y muestreo.')">
+                    <div class="h-44 overflow-hidden relative bg-gray-100">
                         <img src="Imagen010.png" alt="Cilindros de Extracción" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="w-10 h-10 bg-cyan-500 text-slate-950 rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
                         </div>
                     </div>
                     <div class="p-3 text-center">
-                        <h3 class="text-xs font-bold text-white truncate">Cilindros de Extracción</h3>
+                        <h3 class="text-xs font-bold text-gray-900 truncate">Cilindros de Extracción</h3>
                     </div>
                 </div>
             </div>
@@ -386,62 +386,62 @@
     </section>
 
     <!-- CLIENTES -->
-    <section id="clientes" class="py-20 bg-[#0b0f19]">
+    <section id="clientes" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">Algunos de Nuestros Clientes</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto mb-12 text-sm">
+            <h2 class="text-3xl sm:text-4xl font-bold text-black tracking-tight mb-4">Algunos de Nuestros Clientes</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-12 text-sm">
                 Instituciones académicas, universidades y empresas líderes confían en nuestra precisión y capacidad de desarrollo custom-made.
             </p>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl flex items-center justify-center font-bold text-lg text-slate-300">USACH</div>
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl flex items-center justify-center font-bold text-lg text-slate-300">U. DE CHILE</div>
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl flex items-center justify-center font-bold text-lg text-slate-300">U. SANTA MARÍA</div>
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl flex items-center justify-center font-bold text-lg text-slate-300">AMINPRO</div>
+                <div class="bg-gray-50 border border-gray-200 p-6 rounded-2xl flex items-center justify-center font-bold text-lg text-black shadow-sm">USACH</div>
+                <div class="bg-gray-50 border border-gray-200 p-6 rounded-2xl flex items-center justify-center font-bold text-lg text-black shadow-sm">U. DE CHILE</div>
+                <div class="bg-gray-50 border border-gray-200 p-6 rounded-2xl flex items-center justify-center font-bold text-lg text-black shadow-sm">U. SANTA MARÍA</div>
+                <div class="bg-gray-50 border border-gray-200 p-6 rounded-2xl flex items-center justify-center font-bold text-lg text-black shadow-sm">AMINPRO</div>
             </div>
         </div>
     </section>
 
     <!-- FORMULARIO DE CONTACTO -->
-    <section id="contacto" class="py-20 bg-slate-900/50 border-t border-slate-800/80">
+    <section id="contacto" class="py-20 bg-gray-50 border-t border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
                 <div class="lg:col-span-5 space-y-6">
-                    <span class="text-cyan-400 text-xs font-bold tracking-widest uppercase bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">Contacto Directo</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Impulsemos tu proyecto de I+D</h2>
-                    <p class="text-slate-300 text-sm leading-relaxed">
+                    <span class="text-black text-xs font-bold tracking-widest uppercase bg-gray-200 px-3 py-1 rounded-full border border-gray-300">Contacto Directo</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-black tracking-tight">Impulsemos tu proyecto de I+D</h2>
+                    <p class="text-gray-600 text-sm leading-relaxed">
                         Cuéntanos los requerimientos de tu equipo o prototipo. Nuestro equipo técnico se pondrá en contacto contigo a la brevedad.
                     </p>
                     
                     <div class="space-y-4 pt-4">
-                        <div class="flex items-center gap-4 text-slate-300">
-                            <div class="w-10 h-10 bg-cyan-500/10 rounded-xl flex items-center justify-center text-cyan-400">
-                                <i class="fab fa-whatsapp text-xl"></i>
+                        <div class="flex items-center gap-4 text-gray-700">
+                            <div class="w-10 h-10 bg-gray-200 rounded-xl flex items-center justify-center text-black">
+                                <i class="fab fa-whatsapp text-xl text-emerald-600"></i>
                             </div>
                             <div>
-                                <span class="block text-xs text-slate-400">WhatsApp Comercial</span>
-                                <a href="https://wa.me/56984029443" target="_blank" class="font-bold text-white hover:text-cyan-400">+56 9 8402 9443</a>
+                                <span class="block text-xs text-gray-500">WhatsApp Comercial</span>
+                                <a href="https://wa.me/56984029443" target="_blank" class="font-bold text-black hover:underline">+56 9 8402 9443</a>
                             </div>
                         </div>
 
-                        <div class="flex items-center gap-4 text-slate-300">
-                            <div class="w-10 h-10 bg-cyan-500/10 rounded-xl flex items-center justify-center text-cyan-400">
+                        <div class="flex items-center gap-4 text-gray-700">
+                            <div class="w-10 h-10 bg-gray-200 rounded-xl flex items-center justify-center text-black">
                                 <i class="fas fa-envelope text-lg"></i>
                             </div>
                             <div>
-                                <span class="block text-xs text-slate-400">Correo General</span>
-                                <a href="mailto:contacto@customtech.cl" class="font-bold text-white hover:text-cyan-400">contacto@customtech.cl</a>
+                                <span class="block text-xs text-gray-500">Correo General</span>
+                                <a href="mailto:contacto@customtech.cl" class="font-bold text-black hover:underline">contacto@customtech.cl</a>
                             </div>
                         </div>
 
-                        <div class="flex items-center gap-4 text-slate-300">
-                            <div class="w-10 h-10 bg-cyan-500/10 rounded-xl flex items-center justify-center text-cyan-400">
+                        <div class="flex items-center gap-4 text-gray-700">
+                            <div class="w-10 h-10 bg-gray-200 rounded-xl flex items-center justify-center text-black">
                                 <i class="fas fa-user-tie text-lg"></i>
                             </div>
                             <div>
-                                <span class="block text-xs text-slate-400">Equipo Técnico</span>
+                                <span class="block text-xs text-gray-500">Equipo Técnico</span>
                                 <div class="flex flex-col">
-                                    <a href="mailto:patricio.arias@customtech.cl" class="font-semibold text-sm text-white hover:text-cyan-400">patricio.arias@customtech.cl</a>
-                                    <a href="mailto:rodrigo.arias@customtech.cl" class="font-semibold text-sm text-white hover:text-cyan-400">rodrigo.arias@customtech.cl</a>
+                                    <a href="mailto:patricio.arias@customtech.cl" class="font-semibold text-sm text-black hover:underline">patricio.arias@customtech.cl</a>
+                                    <a href="mailto:rodrigo.arias@customtech.cl" class="font-semibold text-sm text-black hover:underline">rodrigo.arias@customtech.cl</a>
                                 </div>
                             </div>
                         </div>
@@ -449,29 +449,29 @@
                 </div>
 
                 <div class="lg:col-span-7">
-                    <form id="contact-form" class="bg-slate-900 border border-slate-800 p-8 rounded-2xl space-y-6">
+                    <form id="contact-form" class="bg-white border border-gray-200 p-8 rounded-2xl space-y-6 shadow-sm">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div>
-                                <label class="block text-xs font-semibold text-slate-300 mb-2">Nombre / Institución</label>
-                                <input type="text" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500 transition-colors" placeholder="Ej. Laboratorio Minero S.A.">
+                                <label class="block text-xs font-semibold text-gray-700 mb-2">Nombre / Institución</label>
+                                <input type="text" required class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 text-black text-sm focus:outline-none focus:border-black transition-colors" placeholder="Ej. Laboratorio Minero S.A.">
                             </div>
                             <div>
-                                <label class="block text-xs font-semibold text-slate-300 mb-2">Correo Electrónico</label>
-                                <input type="email" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500 transition-colors" placeholder="correo@ejemplo.cl">
+                                <label class="block text-xs font-semibold text-gray-700 mb-2">Correo Electrónico</label>
+                                <input type="email" required class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 text-black text-sm focus:outline-none focus:border-black transition-colors" placeholder="correo@ejemplo.cl">
                             </div>
                         </div>
                         <div>
-                            <label class="block text-xs font-semibold text-slate-300 mb-2">Asunto / Tipo de Proyecto</label>
-                            <input type="text" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500 transition-colors" placeholder="Ej. Columna de flotación customizada">
+                            <label class="block text-xs font-semibold text-gray-700 mb-2">Asunto / Tipo de Proyecto</label>
+                            <input type="text" required class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 text-black text-sm focus:outline-none focus:border-black transition-colors" placeholder="Ej. Columna de flotación customizada">
                         </div>
                         <div>
-                            <label class="block text-xs font-semibold text-slate-300 mb-2">Mensaje o Requerimientos Técnicos</label>
-                            <textarea rows="4" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500 transition-colors" placeholder="Describa las dimensiones, materiales o proceso requerido..."></textarea>
+                            <label class="block text-xs font-semibold text-gray-700 mb-2">Mensaje o Requerimientos Técnicos</label>
+                            <textarea rows="4" required class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 text-black text-sm focus:outline-none focus:border-black transition-colors" placeholder="Describa las dimensiones, materiales o proceso requerido..."></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold py-4 rounded-xl transition-all shadow-lg shadow-cyan-500/20">
+                        <button type="submit" class="w-full bg-black hover:bg-gray-800 text-white font-bold py-4 rounded-xl transition-all shadow-md">
                             Enviar Mensaje <i class="fas fa-paper-plane ml-2"></i>
                         </button>
-                        <p id="form-success" class="hidden text-emerald-400 text-xs text-center font-semibold">¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.</p>
+                        <p id="form-success" class="hidden text-emerald-600 text-xs text-center font-semibold">¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.</p>
                     </form>
                 </div>
             </div>
@@ -479,16 +479,16 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-slate-950 border-t border-slate-800 py-12">
+    <footer class="bg-black border-t border-gray-800 py-12 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
             <div class="flex items-center gap-3">
-                <img src="logo.png" alt="CUSTOMTECH Logo" class="h-8 w-auto object-contain" onerror="this.style.display='none';">
-                <span class="text-lg font-bold text-white tracking-wider">CUSTOM<span class="text-cyan-400">TECH</span></span>
+                <img src="logo.png" alt="CUSTOMTECH Logo" class="h-8 w-auto object-contain filter invert" onerror="this.style.display='none';">
+                <span class="text-lg font-bold text-white tracking-wider">CUSTOM<span class="text-gray-400">TECH</span></span>
             </div>
-            <p class="text-xs text-slate-500">© 2026 CUSTOMTECH. Todos los derechos reservados. Equipos custom-made para I+D e Innovación.</p>
-            <div class="flex items-center gap-4 text-slate-400">
-                <a href="https://wa.me/56984029443" target="_blank" class="hover:text-cyan-400 transition-colors"><i class="fab fa-whatsapp text-lg"></i></a>
-                <a href="mailto:contacto@customtech.cl" class="hover:text-cyan-400 transition-colors"><i class="fas fa-envelope text-lg"></i></a>
+            <p class="text-xs text-gray-400">© 2026 CUSTOMTECH. Todos los derechos reservados. Equipos custom-made para I+D e Innovación.</p>
+            <div class="flex items-center gap-4 text-gray-300">
+                <a href="https://wa.me/56984029443" target="_blank" class="hover:text-white transition-colors"><i class="fab fa-whatsapp text-lg"></i></a>
+                <a href="mailto:contacto@customtech.cl" class="hover:text-white transition-colors"><i class="fas fa-envelope text-lg"></i></a>
             </div>
         </div>
     </footer>
@@ -499,17 +499,17 @@
     </a>
 
     <!-- MODAL DE GALERÍA (LIGHTBOX) -->
-    <div id="image-modal" class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md hidden items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 max-w-2xl w-full rounded-2xl overflow-hidden relative shadow-2xl">
-            <button onclick="closeModal()" class="absolute top-4 right-4 z-10 w-10 h-10 bg-slate-950/80 rounded-full flex items-center justify-center text-white hover:bg-slate-800 transition-colors">
+    <div id="image-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="bg-white border border-gray-300 max-w-2xl w-full rounded-2xl overflow-hidden relative shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-4 right-4 z-10 w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-black hover:bg-gray-200 transition-colors">
                 <i class="fas fa-times"></i>
             </button>
-            <div class="h-72 sm:h-96 bg-slate-950 relative flex items-center justify-center p-2">
+            <div class="h-72 sm:h-96 bg-gray-50 relative flex items-center justify-center p-2">
                 <img id="modal-img" src="" alt="Detalle del proyecto" class="max-h-full max-w-full object-contain">
             </div>
             <div class="p-6 space-y-2">
-                <h3 id="modal-title" class="text-xl font-bold text-white"></h3>
-                <p id="modal-desc" class="text-sm text-slate-300 leading-relaxed"></p>
+                <h3 id="modal-title" class="text-xl font-bold text-black"></h3>
+                <p id="modal-desc" class="text-sm text-gray-600 leading-relaxed"></p>
             </div>
         </div>
     </div>
@@ -530,11 +530,11 @@
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 filterBtns.forEach(b => {
-                    b.classList.remove('bg-cyan-500', 'text-slate-950', 'font-bold');
-                    b.classList.add('bg-slate-800', 'text-slate-300', 'font-semibold');
+                    b.classList.remove('bg-black', 'text-white', 'font-bold');
+                    b.classList.add('bg-gray-200', 'text-gray-800', 'font-semibold');
                 });
-                btn.classList.remove('bg-slate-800', 'text-slate-300', 'font-semibold');
-                btn.classList.add('bg-cyan-500', 'text-slate-950', 'font-bold');
+                btn.classList.remove('bg-gray-200', 'text-gray-800', 'font-semibold');
+                btn.classList.add('bg-black', 'text-white', 'font-bold');
 
                 const filter = btn.getAttribute('data-filter');
                 galleryItems.forEach(item => {
