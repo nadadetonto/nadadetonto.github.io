@@ -8,10 +8,11 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Montserrat -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             background-color: #0b0f19;
             color: #f3f4f6;
         }
@@ -31,12 +32,13 @@
     <header class="fixed top-0 left-0 right-0 z-50 bg-[#0b0f19]/90 backdrop-blur-md border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="#inicio" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 bg-cyan-500 rounded-lg flex items-center justify-center font-black text-slate-950 text-xl tracking-tighter group-hover:scale-105 transition-transform">
-                    CT
-                </div>
-                <div>
-                    <span class="text-xl font-extrabold tracking-wider text-white">CUSTOM<span class="text-cyan-400">TECH</span></span>
-                    <span class="block text-[10px] text-slate-400 font-semibold tracking-widest uppercase">I+D & Innovación</span>
+                <!-- Logotipo integrado con respaldo de texto si no carga la imagen -->
+                <div class="flex items-center h-10">
+                    <img src="logo.png" alt="CUSTOMTECH Logo" class="h-9 w-auto object-contain group-hover:scale-105 transition-transform" onerror="this.style.display='none'; document.getElementById('fallback-logo').style.display='flex';">
+                    <div id="fallback-logo" style="display:none;" class="items-center gap-2">
+                        <div class="w-9 h-9 bg-cyan-500 rounded-lg flex items-center justify-center font-black text-slate-950 text-base tracking-tighter">CT</div>
+                        <span class="text-lg font-extrabold tracking-wider text-white">CUSTOM<span class="text-cyan-400">TECH</span></span>
+                    </div>
                 </div>
             </a>
             
@@ -44,7 +46,7 @@
                 <a href="#inicio" class="hover:text-cyan-400 transition-colors">Inicio</a>
                 <a href="#capacidades" class="hover:text-cyan-400 transition-colors">Capacidades & Materiales</a>
                 <a href="#triptico" class="hover:text-cyan-400 transition-colors">Tríptico I+D</a>
-                <a href="#galeria" class="hover:text-cyan-400 transition-colors">Galería de Trabajos</a>
+                <a href="#galeria" class="hover:text-cyan-400 transition-colors">Galería</a>
                 <a href="#clientes" class="hover:text-cyan-400 transition-colors">Clientes</a>
                 <a href="#contacto" class="hover:text-cyan-400 transition-colors">Contacto</a>
             </nav>
@@ -65,7 +67,7 @@
             <a href="#inicio" class="block text-slate-300 hover:text-cyan-400 font-medium">Inicio</a>
             <a href="#capacidades" class="block text-slate-300 hover:text-cyan-400 font-medium">Capacidades & Materiales</a>
             <a href="#triptico" class="block text-slate-300 hover:text-cyan-400 font-medium">Tríptico I+D</a>
-            <a href="#galeria" class="block text-slate-300 hover:text-cyan-400 font-medium">Galería de Trabajos</a>
+            <a href="#galeria" class="block text-slate-300 hover:text-cyan-400 font-medium">Galería</a>
             <a href="#clientes" class="block text-slate-300 hover:text-cyan-400 font-medium">Clientes</a>
             <a href="#contacto" class="block text-slate-300 hover:text-cyan-400 font-medium">Contacto</a>
             <a href="https://wa.me/56984029443" target="_blank" class="flex items-center justify-center gap-2 bg-emerald-600 text-white w-full py-2.5 rounded-xl font-semibold text-sm mt-2">
@@ -86,8 +88,8 @@
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
                         Equipos custom-made para <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">I+D e Innovación</span>
                     </h1>
-                    <p class="text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-                        Diseño y fabricación de equipos personalizados para investigación, experimentación y pilotaje de proyectos. Colaboramos estrechamente contigo desde el concepto hasta el despacho para crear herramientas innovadoras y de alta precisión que impulsan el descubrimiento científico y el avance tecnológico.
+                    <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Diseño y fabricación de equipos personalizados para investigación, experimentación y pilotaje de proyectos. Colaboramos estrechamente contigo desde el concepto hasta el despacho para crear herramientas innovadoras y de alta precisión.
                     </p>
                     <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
                         <a href="#contacto" class="w-full sm:w-auto bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-8 py-4 rounded-xl transition-all shadow-lg shadow-cyan-500/20 text-center">
@@ -125,7 +127,7 @@
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
                 <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Capacidades & Materiales</h2>
                 <p class="text-slate-300 text-base">
-                    Trabajamos un amplio espectro de procesos mecánicos y manuales y de materiales técnicos para garantizar resistencia química, transparencia óptica y precisión dimensional.
+                    Trabajamos un amplio espectro de procesos mecánicos, manuales y materiales técnicos para garantizar resistencia química, transparencia óptica y precisión dimensional.
                 </p>
             </div>
 
@@ -217,7 +219,7 @@
                 <!-- Item 4 -->
                 <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group">
                     <div class="h-48 overflow-hidden relative bg-slate-950">
-                        <img src="Imagen008 (U. Chile).png" alt="U. de Chile" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80'">
+                        <img src="Imagen008.png" alt="U. de Chile" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80'">
                         <div class="absolute top-3 left-3 bg-slate-900/90 backdrop-blur px-2.5 py-1 rounded-lg text-xs font-semibold text-cyan-400">U. de Chile</div>
                     </div>
                     <div class="p-6 space-y-2">
@@ -256,13 +258,13 @@
         </div>
     </section>
 
-    <!-- GALERÍA DE TRABAJOS -->
+    <!-- GALERÍA DE TRABAJOS (MINIATURAS CON MODAL AL CLIC) -->
     <section id="galeria" class="py-20 bg-slate-900/50 border-y border-slate-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
-                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Algunos de Nuestros Trabajos</h2>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Galería de Trabajos</h2>
                 <p class="text-slate-300 text-base">
-                    Explora nuestra galería de equipos fabricados bajo estrictos estándares de ingeniería, adaptados a los requerimientos específicos de cada cliente.
+                    Haz clic en cualquier miniatura para ampliar la imagen y ver los detalles del equipo fabricado.
                 </p>
                 
                 <!-- Filtros -->
@@ -274,140 +276,109 @@
                 </div>
             </div>
 
-            <!-- Grid de Galería -->
-            <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Tarjeta 1 -->
-                <div class="gallery-item bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group cursor-pointer hover:border-cyan-500/50 transition-all" data-category="pilotos" onclick="openModal('Imagen002.png', 'Planta de Flotación en Columna', 'Estructura modular de acero con columnas de acrílico técnico de alta transparencia y manifold de distribución.')">
-                    <div class="h-60 overflow-hidden relative bg-slate-950">
-                        <img src="Imagen002.png" alt="Planta de Flotación" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                            <span class="text-xs text-cyan-400 font-bold flex items-center gap-1">Ver detalles <i class="fas fa-expand"></i></span>
+            <!-- Grid de Miniaturas -->
+            <div id="gallery-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Miniatura 1 -->
+                <div class="gallery-item bg-slate-900 border border-slate-800 rounded-xl overflow-hidden group cursor-pointer hover:border-cyan-500/50 transition-all shadow-md" data-category="pilotos" onclick="openModal('Imagen002.png', 'Planta de Flotación en Columna', 'Estructura modular de acero con columnas de acrílico técnico de alta transparencia y manifold de distribución.')">
+                    <div class="h-44 overflow-hidden relative bg-slate-950">
+                        <img src="Imagen002.png" alt="Planta de Flotación" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80'">
+                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="w-10 h-10 bg-cyan-500 text-slate-950 rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
                         </div>
                     </div>
-                    <div class="p-5">
-                        <span class="text-[10px] text-cyan-400 font-bold uppercase tracking-widest">Plantas Piloto</span>
-                        <h3 class="text-base font-bold text-white mt-1">Planta de Flotación en Columna</h3>
-                        <p class="text-xs text-slate-400 mt-1 line-clamp-2">Estructura modular de acero con columnas de acrílico técnico de alta transparencia.</p>
+                    <div class="p-3 text-center">
+                        <h3 class="text-xs font-bold text-white truncate">Planta de Flotación</h3>
                     </div>
                 </div>
 
-                <!-- Tarjeta 2 -->
-                <div class="gallery-item bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group cursor-pointer hover:border-cyan-500/50 transition-all" data-category="celdas" onclick="openModal('Imagen003.png', 'Celda Hydrofloat de Laboratorio', 'Cuerpo cilíndrico en acrílico termoconformado con base de acero inoxidable AISI 316L e instrumentación.')">
-                    <div class="h-60 overflow-hidden relative bg-slate-950">
-                        <img src="Imagen003.png" alt="Celda Hydrofloat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                            <span class="text-xs text-cyan-400 font-bold flex items-center gap-1">Ver detalles <i class="fas fa-expand"></i></span>
+                <!-- Miniatura 2 -->
+                <div class="gallery-item bg-slate-900 border border-slate-800 rounded-xl overflow-hidden group cursor-pointer hover:border-cyan-500/50 transition-all shadow-md" data-category="celdas" onclick="openModal('Imagen003.png', 'Celda Hydrofloat de Laboratorio', 'Cuerpo cilíndrico en acrílico termoconformado con base de acero inoxidable AISI 316L e instrumentación.')">
+                    <div class="h-44 overflow-hidden relative bg-slate-950">
+                        <img src="Imagen003.png" alt="Celda Hydrofloat" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=600&q=80'">
+                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="w-10 h-10 bg-cyan-500 text-slate-950 rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
                         </div>
                     </div>
-                    <div class="p-5">
-                        <span class="text-[10px] text-cyan-400 font-bold uppercase tracking-widest">Celdas de Ensayo</span>
-                        <h3 class="text-base font-bold text-white mt-1">Celda Hydrofloat de Laboratorio</h3>
-                        <p class="text-xs text-slate-400 mt-1 line-clamp-2">Cuerpo cilíndrico en acrílico termoconformado con base de acero inoxidable.</p>
+                    <div class="p-3 text-center">
+                        <h3 class="text-xs font-bold text-white truncate">Celda Hydrofloat</h3>
                     </div>
                 </div>
 
-                <!-- Tarjeta 3 -->
-                <div class="gallery-item bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group cursor-pointer hover:border-cyan-500/50 transition-all" data-category="pilotos" onclick="openModal('Imagen004.png', 'Columna de Experimentación con Panel', 'Columna de nivel con tablero de instrumentación y control neumático y de flujos integrado.')">
-                    <div class="h-60 overflow-hidden relative bg-slate-950">
-                        <img src="Imagen004.png" alt="Columna con Panel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                            <span class="text-xs text-cyan-400 font-bold flex items-center gap-1">Ver detalles <i class="fas fa-expand"></i></span>
+                <!-- Miniatura 3 -->
+                <div class="gallery-item bg-slate-900 border border-slate-800 rounded-xl overflow-hidden group cursor-pointer hover:border-cyan-500/50 transition-all shadow-md" data-category="pilotos" onclick="openModal('Imagen004.png', 'Columna de Experimentación con Panel', 'Columna de nivel con tablero de instrumentación y control neumático y de flujos integrado.')">
+                    <div class="h-44 overflow-hidden relative bg-slate-950">
+                        <img src="Imagen004.png" alt="Columna con Panel" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80'">
+                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="w-10 h-10 bg-cyan-500 text-slate-950 rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
                         </div>
                     </div>
-                    <div class="p-5">
-                        <span class="text-[10px] text-cyan-400 font-bold uppercase tracking-widest">Plantas Piloto</span>
-                        <h3 class="text-base font-bold text-white mt-1">Columna de Experimentación con Panel</h3>
-                        <p class="text-xs text-slate-400 mt-1 line-clamp-2">Columna de nivel con tablero de instrumentación y control neumático integrado.</p>
+                    <div class="p-3 text-center">
+                        <h3 class="text-xs font-bold text-white truncate">Columna con Panel</h3>
                     </div>
                 </div>
 
-                <!-- Tarjeta 4 -->
-                <div class="gallery-item bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group cursor-pointer hover:border-cyan-500/50 transition-all" data-category="componentes" onclick="openModal('Imagen005.png', 'Ensamblaje Superior y Electrodos', 'Estructura prismática con acrílico y componentes de cobre mecanizado para pruebas electroquímicas.')">
-                    <div class="h-60 overflow-hidden relative bg-slate-950">
-                        <img src="Imagen005.png" alt="Ensamblaje Superior" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                            <span class="text-xs text-cyan-400 font-bold flex items-center gap-1">Ver detalles <i class="fas fa-expand"></i></span>
+                <!-- Miniatura 4 -->
+                <div class="gallery-item bg-slate-900 border border-slate-800 rounded-xl overflow-hidden group cursor-pointer hover:border-cyan-500/50 transition-all shadow-md" data-category="componentes" onclick="openModal('Imagen005.png', 'Ensamblaje Superior y Electrodos', 'Estructura prismática con acrílico y componentes de cobre mecanizado para pruebas electroquímicas.')">
+                    <div class="h-44 overflow-hidden relative bg-slate-950">
+                        <img src="Imagen005.png" alt="Ensamblaje Superior" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80'">
+                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="w-10 h-10 bg-cyan-500 text-slate-950 rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
                         </div>
                     </div>
-                    <div class="p-5">
-                        <span class="text-[10px] text-cyan-400 font-bold uppercase tracking-widest">Acrílicos & Componentes</span>
-                        <h3 class="text-base font-bold text-white mt-1">Ensamblaje Superior y Electrodos</h3>
-                        <p class="text-xs text-slate-400 mt-1 line-clamp-2">Estructura prismática con acrílico y componentes de cobre mecanizado.</p>
+                    <div class="p-3 text-center">
+                        <h3 class="text-xs font-bold text-white truncate">Ensamblaje Superior</h3>
                     </div>
                 </div>
 
-                <!-- Tarjeta 5 -->
-                <div class="gallery-item bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group cursor-pointer hover:border-cyan-500/50 transition-all" data-category="celdas" onclick="openModal('Imagen006.png', 'Electrocelda Mistop en Exhibición', 'Celda especializada montada en módulo de demostración para control de niebla ácida en minería.')">
-                    <div class="h-60 overflow-hidden relative bg-slate-950">
-                        <img src="Imagen006.png" alt="Electrocelda Mistop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                            <span class="text-xs text-cyan-400 font-bold flex items-center gap-1">Ver detalles <i class="fas fa-expand"></i></span>
+                <!-- Miniatura 5 -->
+                <div class="gallery-item bg-slate-900 border border-slate-800 rounded-xl overflow-hidden group cursor-pointer hover:border-cyan-500/50 transition-all shadow-md" data-category="celdas" onclick="openModal('Imagen006.png', 'Electrocelda Mistop en Exhibición', 'Celda especializada montada en módulo de demostración para control de niebla ácida en minería.')">
+                    <div class="h-44 overflow-hidden relative bg-slate-950">
+                        <img src="Imagen006.png" alt="Electrocelda Mistop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80'">
+                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="w-10 h-10 bg-cyan-500 text-slate-950 rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
                         </div>
                     </div>
-                    <div class="p-5">
-                        <span class="text-[10px] text-cyan-400 font-bold uppercase tracking-widest">Celdas de Ensayo</span>
-                        <h3 class="text-base font-bold text-white mt-1">Electrocelda Mistop en Exhibición</h3>
-                        <p class="text-xs text-slate-400 mt-1 line-clamp-2">Celda especializada montada en módulo de demostración para control de niebla ácida.</p>
+                    <div class="p-3 text-center">
+                        <h3 class="text-xs font-bold text-white truncate">Electrocelda Mistop</h3>
                     </div>
                 </div>
 
-                <!-- Tarjeta 6 -->
-                <div class="gallery-item bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group cursor-pointer hover:border-cyan-500/50 transition-all" data-category="componentes" onclick="openModal('Imagen007.png', 'Manifold Multilínea de Precisión', 'Cilindro de acrílico con múltiples llaves de paso y conexiones neumáticas para control de fluidos.')">
-                    <div class="h-60 overflow-hidden relative bg-slate-950">
-                        <img src="Imagen007.png" alt="Manifold Multilínea" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                            <span class="text-xs text-cyan-400 font-bold flex items-center gap-1">Ver detalles <i class="fas fa-expand"></i></span>
+                <!-- Miniatura 6 -->
+                <div class="gallery-item bg-slate-900 border border-slate-800 rounded-xl overflow-hidden group cursor-pointer hover:border-cyan-500/50 transition-all shadow-md" data-category="componentes" onclick="openModal('Imagen007.png', 'Manifold Multilínea de Precisión', 'Cilindro de acrílico con múltiples llaves de paso y conexiones neumáticas para control de fluidos.')">
+                    <div class="h-44 overflow-hidden relative bg-slate-950">
+                        <img src="Imagen007.png" alt="Manifold Multilínea" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80'">
+                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="w-10 h-10 bg-cyan-500 text-slate-950 rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
                         </div>
                     </div>
-                    <div class="p-5">
-                        <span class="text-[10px] text-cyan-400 font-bold uppercase tracking-widest">Manifolds & Acrílicos</span>
-                        <h3 class="text-base font-bold text-white mt-1">Manifold Multilínea de Precisión</h3>
-                        <p class="text-xs text-slate-400 mt-1 line-clamp-2">Cilindro de acrílico con múltiples llaves de paso y conexiones neumáticas.</p>
+                    <div class="p-3 text-center">
+                        <h3 class="text-xs font-bold text-white truncate">Manifold Multilínea</h3>
                     </div>
                 </div>
 
-                <!-- Tarjeta 7 -->
-                <div class="gallery-item bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group cursor-pointer hover:border-cyan-500/50 transition-all" data-category="pilotos" onclick="openModal('Imagen01.png', 'Columnas Modulares Apilables', 'Módulos cilíndricos transparentes intercambiables con flanges de alta resistencia.')">
-                    <div class="h-60 overflow-hidden relative bg-slate-950">
-                        <img src="Imagen01.png" alt="Columnas Modulares" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                            <span class="text-xs text-cyan-400 font-bold flex items-center gap-1">Ver detalles <i class="fas fa-expand"></i></span>
+                <!-- Miniatura 7 -->
+                <div class="gallery-item bg-slate-900 border border-slate-800 rounded-xl overflow-hidden group cursor-pointer hover:border-cyan-500/50 transition-all shadow-md" data-category="pilotos" onclick="openModal('Imagen01.png', 'Columnas Modulares Apilables', 'Módulos cilíndricos transparentes intercambiables con flanges de alta resistencia.')">
+                    <div class="h-44 overflow-hidden relative bg-slate-950">
+                        <img src="Imagen01.png" alt="Columnas Modulares" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=600&q=80'">
+                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="w-10 h-10 bg-cyan-500 text-slate-950 rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
                         </div>
                     </div>
-                    <div class="p-5">
-                        <span class="text-[10px] text-cyan-400 font-bold uppercase tracking-widest">Plantas Piloto</span>
-                        <h3 class="text-base font-bold text-white mt-1">Columnas Modulares Apilables</h3>
-                        <p class="text-xs text-slate-400 mt-1 line-clamp-2">Módulos cilíndricos transparentes intercambiables con flanges de alta resistencia.</p>
+                    <div class="p-3 text-center">
+                        <h3 class="text-xs font-bold text-white truncate">Columnas Modulares</h3>
                     </div>
                 </div>
 
-                <!-- Tarjeta 8 -->
-                <div class="gallery-item bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group cursor-pointer hover:border-cyan-500/50 transition-all" data-category="componentes" onclick="openModal('Imagen010.png', 'Cilindros de Extracción con Inserciones', 'Tubos de acrílico técnico con niples de acero inoxidable integrados para inyección y muestreo.')">
-                    <div class="h-60 overflow-hidden relative bg-slate-950">
-                        <img src="Imagen010.png" alt="Cilindros de Extracción" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                            <span class="text-xs text-cyan-400 font-bold flex items-center gap-1">Ver detalles <i class="fas fa-expand"></i></span>
+                <!-- Miniatura 8 -->
+                <div class="gallery-item bg-slate-900 border border-slate-800 rounded-xl overflow-hidden group cursor-pointer hover:border-cyan-500/50 transition-all shadow-md" data-category="componentes" onclick="openModal('Imagen010.png', 'Cilindros de Extracción con Inserciones', 'Tubos de acrílico técnico con niples de acero inoxidable integrados para inyección y muestreo.')">
+                    <div class="h-44 overflow-hidden relative bg-slate-950">
+                        <img src="Imagen010.png" alt="Cilindros de Extracción" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80'">
+                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="w-10 h-10 bg-cyan-500 text-slate-950 rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
                         </div>
                     </div>
-                    <div class="p-5">
-                        <span class="text-[10px] text-cyan-400 font-bold uppercase tracking-widest">Acrílicos & Componentes</span>
-                        <h3 class="text-base font-bold text-white mt-1">Cilindros de Extracción con Inserciones</h3>
-                        <p class="text-xs text-slate-400 mt-1 line-clamp-2">Tubos de acrílico técnico con niples de acero inoxidable integrados.</p>
-                    </div>
-                </div>
-
-                <!-- Tarjeta 9 -->
-                <div class="gallery-item bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group cursor-pointer hover:border-cyan-500/50 transition-all" data-category="celdas" onclick="openModal('Imagen013.png', 'Celdas Prismáticas Modulares', 'Estructuras rectangulares compartimentadas en acrílico con refuerzos y tornillería de precisión.')">
-                    <div class="h-60 overflow-hidden relative bg-slate-950">
-                        <img src="Imagen013.png" alt="Celdas Prismáticas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                            <span class="text-xs text-cyan-400 font-bold flex items-center gap-1">Ver detalles <i class="fas fa-expand"></i></span>
-                        </div>
-                    </div>
-                    <div class="p-5">
-                        <span class="text-[10px] text-cyan-400 font-bold uppercase tracking-widest">Celdas de Ensayo</span>
-                        <h3 class="text-base font-bold text-white mt-1">Celdas Prismáticas Modulares</h3>
-                        <p class="text-xs text-slate-400 mt-1 line-clamp-2">Estructuras rectangulares compartimentadas en acrílico con refuerzos y tornillería.</p>
+                    <div class="p-3 text-center">
+                        <h3 class="text-xs font-bold text-white truncate">Cilindros de Extracción</h3>
                     </div>
                 </div>
             </div>
@@ -511,7 +482,7 @@
     <footer class="bg-slate-950 border-t border-slate-800 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
             <div class="flex items-center gap-3">
-                <div class="w-8 h-8 bg-cyan-500 rounded-lg flex items-center justify-center font-black text-slate-950 text-sm">CT</div>
+                <img src="logo.png" alt="CUSTOMTECH Logo" class="h-8 w-auto object-contain" onerror="this.style.display='none';">
                 <span class="text-lg font-bold text-white tracking-wider">CUSTOM<span class="text-cyan-400">TECH</span></span>
             </div>
             <p class="text-xs text-slate-500">© 2026 CUSTOMTECH. Todos los derechos reservados. Equipos custom-made para I+D e Innovación.</p>
@@ -527,14 +498,14 @@
         <i class="fab fa-whatsapp text-3xl"></i>
     </a>
 
-    <!-- MODAL DE GALERÍA -->
+    <!-- MODAL DE GALERÍA (LIGHTBOX) -->
     <div id="image-modal" class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md hidden items-center justify-center p-4">
         <div class="bg-slate-900 border border-slate-800 max-w-2xl w-full rounded-2xl overflow-hidden relative shadow-2xl">
             <button onclick="closeModal()" class="absolute top-4 right-4 z-10 w-10 h-10 bg-slate-950/80 rounded-full flex items-center justify-center text-white hover:bg-slate-800 transition-colors">
                 <i class="fas fa-times"></i>
             </button>
-            <div class="h-72 sm:h-96 bg-slate-950 relative">
-                <img id="modal-img" src="" alt="Detalle del proyecto" class="w-full h-full object-contain">
+            <div class="h-72 sm:h-96 bg-slate-950 relative flex items-center justify-center p-2">
+                <img id="modal-img" src="" alt="Detalle del proyecto" class="max-h-full max-w-full object-contain">
             </div>
             <div class="p-6 space-y-2">
                 <h3 id="modal-title" class="text-xl font-bold text-white"></h3>
@@ -576,7 +547,7 @@
             });
         });
 
-        // Lightbox Modal
+        // Lightbox Modal para Galería en Miniatura
         const modal = document.getElementById('image-modal');
         const modalImg = document.getElementById('modal-img');
         const modalTitle = document.getElementById('modal-title');
