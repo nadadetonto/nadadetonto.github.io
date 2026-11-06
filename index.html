@@ -14,540 +14,191 @@
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: #ffffff;
-            color: #0f172a;
-        }
-        .bg-grid {
-            background-size: 40px 40px;
-            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-        }
-        .glow-accent {
-            box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.1);
+            color: #000000;
         }
     </style>
 </head>
-<body class="bg-grid antialiased selection:bg-black selection:text-white">
+<body class="bg-white text-black antialiased selection:bg-black selection:text-white">
 
-    <!-- BARRA DE NAVEGACIÓN -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#inicio" class="flex items-center gap-3 group">
-                <!-- Logotipo -->
-                <div class="flex items-center h-10">
-                    <img src="logo.png" alt="CUSTOMTECH Logo" class="h-9 w-auto object-contain group-hover:scale-105 transition-transform" onerror="this.style.display='none'; document.getElementById('fallback-logo').style.display='flex';">
-                    <div id="fallback-logo" style="display:none;" class="items-center gap-2">
-                        <div class="w-9 h-9 bg-black rounded-lg flex items-center justify-center font-black text-white text-base tracking-tighter">CT</div>
-                        <span class="text-lg font-extrabold tracking-wider text-black">CUSTOM<span class="text-gray-600">TECH</span></span>
-                    </div>
-                </div>
+    <!-- BARRA DE NAVEGACIÓN COMPACTA -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-black/10">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <!-- LOGOTIPO VECTORIAL INTEGRADO -->
+            <a href="#inicio" class="flex items-center gap-2">
+                <svg class="h-8 w-auto" viewBox="0 0 160 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="0" y="20" font-family="Montserrat" font-weight="900" font-size="18" fill="black" letter-spacing="-0.5">CUSTOM</text>
+                    <text x="40" y="38" font-family="Montserrat" font-weight="900" font-size="18" fill="black" letter-spacing="-0.5">TECH</text>
+                    <g transform="translate(120, 5)">
+                        <rect width="32" height="32" fill="black"/>
+                        <rect x="0" y="4" width="28" height="2.5" fill="#ccff00"/>
+                        <rect x="0" y="11" width="32" height="2.5" fill="#ccff00"/>
+                        <rect x="0" y="18" width="28" height="2.5" fill="#ccff00"/>
+                        <rect x="0" y="25" width="32" height="2.5" fill="#ccff00"/>
+                    </g>
+                </svg>
             </a>
             
-            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-700">
+            <nav class="hidden md:flex items-center gap-6 font-medium text-xs uppercase tracking-wider text-black/70">
                 <a href="#inicio" class="hover:text-black transition-colors">Inicio</a>
-                <a href="#capacidades" class="hover:text-black transition-colors">Capacidades & Materiales</a>
-                <a href="#triptico" class="hover:text-black transition-colors">Tríptico I+D</a>
-                <a href="#galeria" class="hover:text-black transition-colors">Galería</a>
-                <a href="#clientes" class="hover:text-black transition-colors">Clientes</a>
+                <a href="#capacidades" class="hover:text-black transition-colors">Capacidades</a>
+                <a href="#galeria" class="hover:text-black transition-colors">Galería I+D</a>
                 <a href="#contacto" class="hover:text-black transition-colors">Contacto</a>
             </nav>
 
-            <div class="flex items-center gap-4">
-                <a href="https://wa.me/56984029443" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-black hover:bg-gray-800 text-white px-4 py-2.5 rounded-xl font-semibold text-sm transition-all shadow-md">
-                    <i class="fab fa-whatsapp text-lg text-emerald-400"></i> +56 9 8402 9443
-                </a>
-                <!-- Botón Menú Móvil -->
-                <button id="menu-btn" class="md:hidden text-gray-800 hover:text-black p-2 focus:outline-none">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Menú Móvil desplegable -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-6 py-4 space-y-3">
-            <a href="#inicio" class="block text-gray-700 hover:text-black font-medium">Inicio</a>
-            <a href="#capacidades" class="block text-gray-700 hover:text-black font-medium">Capacidades & Materiales</a>
-            <a href="#triptico" class="block text-gray-700 hover:text-black font-medium">Tríptico I+D</a>
-            <a href="#galeria" class="block text-gray-700 hover:text-black font-medium">Galería</a>
-            <a href="#clientes" class="block text-gray-700 hover:text-black font-medium">Clientes</a>
-            <a href="#contacto" class="block text-gray-700 hover:text-black font-medium">Contacto</a>
-            <a href="https://wa.me/56984029443" target="_blank" class="flex items-center justify-center gap-2 bg-black text-white w-full py-2.5 rounded-xl font-semibold text-sm mt-2">
-                <i class="fab fa-whatsapp text-lg text-emerald-400"></i> WhatsApp Directo
+            <a href="https://wa.me/56984029443" target="_blank" class="bg-black text-white px-4 py-2 rounded-lg font-bold text-xs tracking-wide uppercase hover:bg-neutral-800 transition-all flex items-center gap-2">
+                <i class="fab fa-whatsapp text-sm text-emerald-400"> +56 9 8402 9443</i>
             </a>
         </div>
     </header>
 
-    <!-- SECCIÓN INICIO / HERO -->
-    <section id="inicio" class="pt-32 pb-20 md:pt-44 md:pb-32 relative overflow-hidden bg-white">
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gray-100 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 bg-gray-100 border border-gray-300 px-3.5 py-1.5 rounded-full text-black text-xs font-semibold tracking-wide uppercase">
-                        <i class="fas fa-microchip"></i> Ingeniería y Fabricación a Medida
-                    </div>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-black leading-tight">
-                        Equipos custom-made para <span class="underline decoration-black decoration-2">I+D e Innovación</span>
-                    </h1>
-                    <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-                        Diseño y fabricación de equipos personalizados para investigación, experimentación y pilotaje de proyectos. Colaboramos estrechamente contigo desde el concepto hasta el despacho para crear herramientas innovadoras y de alta precisión.
-                    </p>
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                        <a href="#contacto" class="w-full sm:w-auto bg-black hover:bg-gray-800 text-white font-bold px-8 py-4 rounded-xl transition-all shadow-lg text-center">
-                            Solicitar Cotización <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                        <a href="https://wa.me/56984029443" target="_blank" class="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 text-black font-semibold px-8 py-4 rounded-xl transition-all border border-gray-300 text-center flex items-center justify-center gap-2">
-                            <i class="fab fa-whatsapp text-emerald-600 text-xl"></i> Escríbenos por WhatsApp
-                        </a>
-                    </div>
-                </div>
-                <div class="lg:col-span-5">
-                    <div class="relative mx-auto max-w-md lg:max-w-none">
-                        <div class="absolute -inset-1 bg-gray-300 rounded-2xl blur-lg opacity-30"></div>
-                        <div class="relative bg-white border border-gray-200 rounded-2xl p-6 shadow-xl glow-accent">
-                            <div class="flex items-center justify-between mb-4 pb-4 border-b border-gray-200">
-                                <span class="text-xs font-bold text-black uppercase tracking-widest">CUSTOMTECH LAB</span>
-                                <div class="flex gap-1.5">
-                                    <div class="w-3 h-3 rounded-full bg-gray-300"></div>
-                                    <div class="w-3 h-3 rounded-full bg-gray-400"></div>
-                                    <div class="w-3 h-3 rounded-full bg-black"></div>
-                                </div>
-                            </div>
-                            <img src="Imagen002.png" alt="Sistema modular CUSTOMTECH" class="rounded-xl object-cover w-full h-72 shadow-md mb-4 border border-gray-200" onerror="this.src='https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80'">
-                            <p class="text-sm text-gray-500 italic text-center">"Herramientas de alta precisión para investigación de procesos industriales y mineros."</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CAPACIDADES & MATERIALES -->
-    <section id="capacidades" class="py-20 bg-gray-50 border-y border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <h2 class="text-3xl sm:text-4xl font-bold text-black tracking-tight">Capacidades & Materiales</h2>
-                <p class="text-gray-600 text-base">
-                    Trabajamos un amplio espectro de procesos mecánicos, manuales y materiales técnicos para garantizar resistencia química, transparencia óptica y precisión dimensional.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white border border-gray-200 p-6 rounded-2xl hover:border-black transition-colors shadow-sm">
-                    <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-black text-xl font-bold mb-4">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-black mb-2">Procesos Mecánicos</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed">
-                        Mecanizado CNC, torneado de precisión, termoformado de polímeros, fresado, soldadura plástica y ensamblajes complejos a medida.
-                    </p>
-                </div>
-
-                <div class="bg-white border border-gray-200 p-6 rounded-2xl hover:border-black transition-colors shadow-sm">
-                    <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-black text-xl font-bold mb-4">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-black mb-2">Polímeros & Resinas</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed">
-                        Policarbonato, Acrílicos de alta transparencia, PVC, HDP, Teflón, Resinas Epoxi, Poliéster, Poliuretano y Fibras especiales.
-                    </p>
-                </div>
-
-                <div class="bg-white border border-gray-200 p-6 rounded-2xl hover:border-black transition-colors shadow-sm">
-                    <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-black text-xl font-bold mb-4">
-                        <i class="fas fa-cubes"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-black mb-2">Metales & Compuestos</h3>
-                    <p class="text-sm text-gray-600 leading-relaxed">
-                        Aluminio, Bronce, Cobre, Acero inoxidable (AISI 316L), Vidrio de laboratorio y Cuarzo para aplicaciones exigentes en I+D.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN TRÍPTICO I+D -->
-    <section id="triptico" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <span class="text-black text-xs font-bold tracking-widest uppercase bg-gray-100 px-3 py-1 rounded-full border border-gray-300">Proyectos Destacados</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-black tracking-tight">Tríptico I+D e Innovación</h2>
-                <p class="text-gray-600 text-base">
-                    Soluciones experimentales desarrolladas para universidades, centros tecnológicos y la industria minera nacional e internacional.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Item 1 -->
-                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden group shadow-sm hover:shadow-md transition-all">
-                    <div class="h-48 overflow-hidden relative bg-gray-100">
-                        <img src="Imagen003.png" alt="Molino SAG" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute top-3 left-3 bg-white/90 backdrop-blur px-2.5 py-1 rounded-lg text-xs font-semibold text-black border border-gray-200">Prototipo</div>
-                    </div>
-                    <div class="p-6 space-y-2">
-                        <h3 class="text-lg font-bold text-black">Molino SAG para Minería</h3>
-                        <p class="text-xs text-gray-700 font-medium">Termoformado y corte en Acrílico, Technyl y Acero</p>
-                        <p class="text-sm text-gray-600">Desarrollado para pruebas experimentales de conminución y molienda a escala de laboratorio.</p>
-                    </div>
-                </div>
-
-                <!-- Item 2 -->
-                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden group shadow-sm hover:shadow-md transition-all">
-                    <div class="h-48 overflow-hidden relative bg-gray-100">
-                        <img src="Imagen005.png" alt="Cristalizador USACH" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute top-3 left-3 bg-white/90 backdrop-blur px-2.5 py-1 rounded-lg text-xs font-semibold text-black border border-gray-200">USACH</div>
-                    </div>
-                    <div class="p-6 space-y-2">
-                        <h3 class="text-lg font-bold text-black">Cristalizador de Doble Camisa</h3>
-                        <p class="text-xs text-gray-700 font-medium">Control de Temperatura & Instrumentación</p>
-                        <p class="text-sm text-gray-600">Reactor especializado con control térmico y conexión directa a sistemas de adquisición de datos internos.</p>
-                    </div>
-                </div>
-
-                <!-- Item 3 -->
-                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden group shadow-sm hover:shadow-md transition-all">
-                    <div class="h-48 overflow-hidden relative bg-gray-100">
-                        <img src="Imagen007.png" alt="Experimento de Darcy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute top-3 left-3 bg-white/90 backdrop-blur px-2.5 py-1 rounded-lg text-xs font-semibold text-black border border-gray-200">U. Santa María</div>
-                    </div>
-                    <div class="p-6 space-y-2">
-                        <h3 class="text-lg font-bold text-black">Experimento de Darcy</h3>
-                        <p class="text-xs text-gray-700 font-medium">Equipos y Reactores Hidráulicos</p>
-                        <p class="text-sm text-gray-600">Banco experimental fabricado para el estudio detallado del paso de fluidos a través de distintos medios porosos.</p>
-                    </div>
-                </div>
-
-                <!-- Item 4 -->
-                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden group shadow-sm hover:shadow-md transition-all">
-                    <div class="h-48 overflow-hidden relative bg-gray-100">
-                        <img src="Imagen008.png" alt="U. de Chile" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute top-3 left-3 bg-white/90 backdrop-blur px-2.5 py-1 rounded-lg text-xs font-semibold text-black border border-gray-200">U. de Chile</div>
-                    </div>
-                    <div class="p-6 space-y-2">
-                        <h3 class="text-lg font-bold text-black">Pieza de Equipo Experimental</h3>
-                        <p class="text-xs text-gray-700 font-medium">Acrílico Técnico & Sensores</p>
-                        <p class="text-sm text-gray-600">Cámara cilíndrica transparente con puertos instrumentados para análisis electroquímico y de soluciones.</p>
-                    </div>
-                </div>
-
-                <!-- Item 5 -->
-                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden group shadow-sm hover:shadow-md transition-all">
-                    <div class="h-48 overflow-hidden relative bg-gray-100">
-                        <img src="Imagen014.png" alt="AMINPRO" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute top-3 left-3 bg-white/90 backdrop-blur px-2.5 py-1 rounded-lg text-xs font-semibold text-black border border-gray-200">AMINPRO</div>
-                    </div>
-                    <div class="p-6 space-y-2">
-                        <h3 class="text-lg font-bold text-black">Columna de 4 Metros</h3>
-                        <p class="text-xs text-gray-700 font-medium">Flotación de Minerales</p>
-                        <p class="text-sm text-gray-600">Sistema modular de columnas de gran altura instalado en planta piloto para pruebas metalúrgicas a escala real.</p>
-                    </div>
-                </div>
-
-                <!-- Item 6 -->
-                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden group shadow-sm hover:shadow-md transition-all">
-                    <div class="h-48 overflow-hidden relative bg-gray-100">
-                        <img src="Imagen006.png" alt="Mistop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute top-3 left-3 bg-white/90 backdrop-blur px-2.5 py-1 rounded-lg text-xs font-semibold text-black border border-gray-200">Expomin</div>
-                    </div>
-                    <div class="p-6 space-y-2">
-                        <h3 class="text-lg font-bold text-black">Electrocelda Mistop®</h3>
-                        <p class="text-xs text-gray-700 font-medium">Estudios de Niebla Ácida</p>
-                        <p class="text-sm text-gray-600">Equipo especializado para electrometalurgia presentado en Expomin, optimizado para la supresión de neblinas y control ambiental.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- GALERÍA DE TRABAJOS (MINIATURAS CON MODAL AL CLIC) -->
-    <section id="galeria" class="py-20 bg-gray-50 border-y border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
-                <h2 class="text-3xl sm:text-4xl font-bold text-black tracking-tight">Galería de Trabajos</h2>
-                <p class="text-gray-600 text-base">
-                    Haz clic en cualquier miniatura para ampliar la imagen y ver los detalles del equipo fabricado.
-                </p>
-                
-                <!-- Filtros -->
-                <div class="flex flex-wrap justify-center gap-2 pt-4">
-                    <button class="filter-btn active bg-black text-white px-4 py-2 rounded-xl text-xs font-bold transition-all" data-filter="all">Todos</button>
-                    <button class="filter-btn bg-gray-200 text-gray-800 hover:text-black px-4 py-2 rounded-xl text-xs font-semibold transition-all" data-filter="pilotos">Plantas Piloto & Columnas</button>
-                    <button class="filter-btn bg-gray-200 text-gray-800 hover:text-black px-4 py-2 rounded-xl text-xs font-semibold transition-all" data-filter="celdas">Celdas de Ensayo</button>
-                    <button class="filter-btn bg-gray-200 text-gray-800 hover:text-black px-4 py-2 rounded-xl text-xs font-semibold transition-all" data-filter="componentes">Manifolds & Acrílicos</button>
-                </div>
-            </div>
-
-            <!-- Grid de Miniaturas -->
-            <div id="gallery-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-                <!-- Miniatura 1 -->
-                <div class="gallery-item bg-white border border-gray-200 rounded-xl overflow-hidden group cursor-pointer hover:border-black transition-all shadow-sm" data-category="pilotos" onclick="openModal('Imagen002.png', 'Planta de Flotación en Columna', 'Estructura modular de acero con columnas de acrílico técnico de alta transparencia y manifold de distribución.')">
-                    <div class="h-44 overflow-hidden relative bg-gray-100">
-                        <img src="Imagen002.png" alt="Planta de Flotación" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
-                        </div>
-                    </div>
-                    <div class="p-3 text-center">
-                        <h3 class="text-xs font-bold text-gray-900 truncate">Planta de Flotación</h3>
-                    </div>
-                </div>
-
-                <!-- Miniatura 2 -->
-                <div class="gallery-item bg-white border border-gray-200 rounded-xl overflow-hidden group cursor-pointer hover:border-black transition-all shadow-sm" data-category="celdas" onclick="openModal('Imagen003.png', 'Celda Hydrofloat de Laboratorio', 'Cuerpo cilíndrico en acrílico termoconformado con base de acero inoxidable AISI 316L e instrumentación.')">
-                    <div class="h-44 overflow-hidden relative bg-gray-100">
-                        <img src="Imagen003.png" alt="Celda Hydrofloat" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
-                        </div>
-                    </div>
-                    <div class="p-3 text-center">
-                        <h3 class="text-xs font-bold text-gray-900 truncate">Celda Hydrofloat</h3>
-                    </div>
-                </div>
-
-                <!-- Miniatura 3 -->
-                <div class="gallery-item bg-white border border-gray-200 rounded-xl overflow-hidden group cursor-pointer hover:border-black transition-all shadow-sm" data-category="pilotos" onclick="openModal('Imagen004.png', 'Columna de Experimentación con Panel', 'Columna de nivel con tablero de instrumentación y control neumático y de flujos integrado.')">
-                    <div class="h-44 overflow-hidden relative bg-gray-100">
-                        <img src="Imagen004.png" alt="Columna con Panel" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
-                        </div>
-                    </div>
-                    <div class="p-3 text-center">
-                        <h3 class="text-xs font-bold text-gray-900 truncate">Columna con Panel</h3>
-                    </div>
-                </div>
-
-                <!-- Miniatura 4 -->
-                <div class="gallery-item bg-white border border-gray-200 rounded-xl overflow-hidden group cursor-pointer hover:border-black transition-all shadow-sm" data-category="componentes" onclick="openModal('Imagen005.png', 'Ensamblaje Superior y Electrodos', 'Estructura prismática con acrílico y componentes de cobre mecanizado para pruebas electroquímicas.')">
-                    <div class="h-44 overflow-hidden relative bg-gray-100">
-                        <img src="Imagen005.png" alt="Ensamblaje Superior" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
-                        </div>
-                    </div>
-                    <div class="p-3 text-center">
-                        <h3 class="text-xs font-bold text-gray-900 truncate">Ensamblaje Superior</h3>
-                    </div>
-                </div>
-
-                <!-- Miniatura 5 -->
-                <div class="gallery-item bg-white border border-gray-200 rounded-xl overflow-hidden group cursor-pointer hover:border-black transition-all shadow-sm" data-category="celdas" onclick="openModal('Imagen006.png', 'Electrocelda Mistop en Exhibición', 'Celda especializada montada en módulo de demostración para control de niebla ácida en minería.')">
-                    <div class="h-44 overflow-hidden relative bg-gray-100">
-                        <img src="Imagen006.png" alt="Electrocelda Mistop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
-                        </div>
-                    </div>
-                    <div class="p-3 text-center">
-                        <h3 class="text-xs font-bold text-gray-900 truncate">Electrocelda Mistop</h3>
-                    </div>
-                </div>
-
-                <!-- Miniatura 6 -->
-                <div class="gallery-item bg-white border border-gray-200 rounded-xl overflow-hidden group cursor-pointer hover:border-black transition-all shadow-sm" data-category="componentes" onclick="openModal('Imagen007.png', 'Manifold Multilínea de Precisión', 'Cilindro de acrílico con múltiples llaves de paso y conexiones neumáticas para control de fluidos.')">
-                    <div class="h-44 overflow-hidden relative bg-gray-100">
-                        <img src="Imagen007.png" alt="Manifold Multilínea" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
-                        </div>
-                    </div>
-                    <div class="p-3 text-center">
-                        <h3 class="text-xs font-bold text-gray-900 truncate">Manifold Multilínea</h3>
-                    </div>
-                </div>
-
-                <!-- Miniatura 7 -->
-                <div class="gallery-item bg-white border border-gray-200 rounded-xl overflow-hidden group cursor-pointer hover:border-black transition-all shadow-sm" data-category="pilotos" onclick="openModal('Imagen01.png', 'Columnas Modulares Apilables', 'Módulos cilíndricos transparentes intercambiables con flanges de alta resistencia.')">
-                    <div class="h-44 overflow-hidden relative bg-gray-100">
-                        <img src="Imagen01.png" alt="Columnas Modulares" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
-                        </div>
-                    </div>
-                    <div class="p-3 text-center">
-                        <h3 class="text-xs font-bold text-gray-900 truncate">Columnas Modulares</h3>
-                    </div>
-                </div>
-
-                <!-- Miniatura 8 -->
-                <div class="gallery-item bg-white border border-gray-200 rounded-xl overflow-hidden group cursor-pointer hover:border-black transition-all shadow-sm" data-category="componentes" onclick="openModal('Imagen010.png', 'Cilindros de Extracción con Inserciones', 'Tubos de acrílico técnico con niples de acero inoxidable integrados para inyección y muestreo.')">
-                    <div class="h-44 overflow-hidden relative bg-gray-100">
-                        <img src="Imagen010.png" alt="Cilindros de Extracción" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80'">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center shadow-lg"><i class="fas fa-search-plus"></i></span>
-                        </div>
-                    </div>
-                    <div class="p-3 text-center">
-                        <h3 class="text-xs font-bold text-gray-900 truncate">Cilindros de Extracción</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CLIENTES -->
-    <section id="clientes" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl sm:text-4xl font-bold text-black tracking-tight mb-4">Algunos de Nuestros Clientes</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto mb-12 text-sm">
-                Instituciones académicas, universidades y empresas líderes confían en nuestra precisión y capacidad de desarrollo custom-made.
+    <!-- INICIO / HERO BREVE -->
+    <section id="inicio" class="pt-28 pb-12 px-4 max-w-6xl mx-auto text-center">
+        <div class="max-w-2xl mx-auto space-y-4">
+            <span class="text-xs font-bold uppercase tracking-widest bg-black text-white px-3 py-1 rounded-full">I+D e Innovación</span>
+            <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
+                Equipos custom-made para investigación y tecnología
+            </h1>
+            <p class="text-sm sm:text-base text-neutral-600">
+                Diseño y fabricación a medida de sistemas, columnas y prototipos de alta precisión para la industria y la ciencia.
             </p>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="bg-gray-50 border border-gray-200 p-6 rounded-2xl flex items-center justify-center font-bold text-lg text-black shadow-sm">USACH</div>
-                <div class="bg-gray-50 border border-gray-200 p-6 rounded-2xl flex items-center justify-center font-bold text-lg text-black shadow-sm">U. DE CHILE</div>
-                <div class="bg-gray-50 border border-gray-200 p-6 rounded-2xl flex items-center justify-center font-bold text-lg text-black shadow-sm">U. SANTA MARÍA</div>
-                <div class="bg-gray-50 border border-gray-200 p-6 rounded-2xl flex items-center justify-center font-bold text-lg text-black shadow-sm">AMINPRO</div>
+        </div>
+    </section>
+
+    <!-- CAPACIDADES RÁPIDAS -->
+    <section id="capacidades" class="py-12 px-4 max-w-6xl mx-auto border-t border-black/10">
+        <h2 class="text-xl font-bold uppercase tracking-wider text-center mb-8">Nuestras Capacidades</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+            <div class="p-6 border border-black/10 rounded-xl bg-neutral-50">
+                <i class="fas fa-cogs text-2xl mb-3"></i>
+                <h3 class="font-bold text-sm mb-1">Mecánica CNC</h3>
+                <p class="text-xs text-neutral-600">Torneado, fresado y soldadura plástica y metálica de precisión.</p>
+            </div>
+            <div class="p-6 border border-black/10 rounded-xl bg-neutral-50">
+                <i class="fas fa-shield-alt text-2xl mb-3"></i>
+                <h3 class="font-bold text-sm mb-1">Polímeros & Acrílicos</h3>
+                <p class="text-xs text-neutral-600">Policarbonato y acrílicos de alta transparencia técnica.</p>
+            </div>
+            <div class="p-6 border border-black/10 rounded-xl bg-neutral-50">
+                <i class="fas fa-cubes text-2xl mb-3"></i>
+                <h3 class="font-bold text-sm mb-1">Metales & Inoxidables</h3>
+                <p class="text-xs text-neutral-600">Acero AISI 316L, aluminio, bronce y cobre para laboratorio.</p>
             </div>
         </div>
     </section>
 
-    <!-- FORMULARIO DE CONTACTO -->
-    <section id="contacto" class="py-20 bg-gray-50 border-t border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                <div class="lg:col-span-5 space-y-6">
-                    <span class="text-black text-xs font-bold tracking-widest uppercase bg-gray-200 px-3 py-1 rounded-full border border-gray-300">Contacto Directo</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-black tracking-tight">Impulsemos tu proyecto de I+D</h2>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Cuéntanos los requerimientos de tu equipo o prototipo. Nuestro equipo técnico se pondrá en contacto contigo a la brevedad.
-                    </p>
-                    
-                    <div class="space-y-4 pt-4">
-                        <div class="flex items-center gap-4 text-gray-700">
-                            <div class="w-10 h-10 bg-gray-200 rounded-xl flex items-center justify-center text-black">
-                                <i class="fab fa-whatsapp text-xl text-emerald-600"></i>
-                            </div>
-                            <div>
-                                <span class="block text-xs text-gray-500">WhatsApp Comercial</span>
-                                <a href="https://wa.me/56984029443" target="_blank" class="font-bold text-black hover:underline">+56 9 8402 9443</a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-4 text-gray-700">
-                            <div class="w-10 h-10 bg-gray-200 rounded-xl flex items-center justify-center text-black">
-                                <i class="fas fa-envelope text-lg"></i>
-                            </div>
-                            <div>
-                                <span class="block text-xs text-gray-500">Correo General</span>
-                                <a href="mailto:contacto@customtech.cl" class="font-bold text-black hover:underline">contacto@customtech.cl</a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-4 text-gray-700">
-                            <div class="w-10 h-10 bg-gray-200 rounded-xl flex items-center justify-center text-black">
-                                <i class="fas fa-user-tie text-lg"></i>
-                            </div>
-                            <div>
-                                <span class="block text-xs text-gray-500">Equipo Técnico</span>
-                                <div class="flex flex-col">
-                                    <a href="mailto:patricio.arias@customtech.cl" class="font-semibold text-sm text-black hover:underline">patricio.arias@customtech.cl</a>
-                                    <a href="mailto:rodrigo.arias@customtech.cl" class="font-semibold text-sm text-black hover:underline">rodrigo.arias@customtech.cl</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <!-- GALERÍA (FOTOS LOCALES CON MINIATURAS Y ZOOM) -->
+    <section id="galeria" class="py-12 px-4 max-w-6xl mx-auto border-t border-black/10">
+        <h2 class="text-xl font-bold uppercase tracking-wider text-center mb-2">Galería de Proyectos</h2>
+        <p class="text-xs text-neutral-500 text-center mb-8">Toca cualquier miniatura para ampliarla</p>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+            <!-- Item 1 -->
+            <div class="border border-black/10 rounded-lg overflow-hidden cursor-pointer group bg-neutral-100" onclick="openModal('Imagen002.png', 'Planta de Flotación en Columna', 'Estructura modular de acero con columnas de acrílico técnico de alta transparencia y manifold de distribución.')">
+                <div class="h-32 overflow-hidden relative bg-neutral-200">
+                    <img src="Imagen002.png" alt="Planta de Flotación" class="w-full h-full object-cover group-hover:scale-105 transition-transform" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=400&q=80'">
                 </div>
+                <div class="p-2 text-center text-xs font-bold truncate">Planta de Flotación</div>
+            </div>
 
-                <div class="lg:col-span-7">
-                    <form id="contact-form" class="bg-white border border-gray-200 p-8 rounded-2xl space-y-6 shadow-sm">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-xs font-semibold text-gray-700 mb-2">Nombre / Institución</label>
-                                <input type="text" required class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 text-black text-sm focus:outline-none focus:border-black transition-colors" placeholder="Ej. Laboratorio Minero S.A.">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-semibold text-gray-700 mb-2">Correo Electrónico</label>
-                                <input type="email" required class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 text-black text-sm focus:outline-none focus:border-black transition-colors" placeholder="correo@ejemplo.cl">
-                            </div>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-gray-700 mb-2">Asunto / Tipo de Proyecto</label>
-                            <input type="text" required class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 text-black text-sm focus:outline-none focus:border-black transition-colors" placeholder="Ej. Columna de flotación customizada">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-gray-700 mb-2">Mensaje o Requerimientos Técnicos</label>
-                            <textarea rows="4" required class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 text-black text-sm focus:outline-none focus:border-black transition-colors" placeholder="Describa las dimensiones, materiales o proceso requerido..."></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-black hover:bg-gray-800 text-white font-bold py-4 rounded-xl transition-all shadow-md">
-                            Enviar Mensaje <i class="fas fa-paper-plane ml-2"></i>
-                        </button>
-                        <p id="form-success" class="hidden text-emerald-600 text-xs text-center font-semibold">¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.</p>
-                    </form>
+            <!-- Item 2 -->
+            <div class="border border-black/10 rounded-lg overflow-hidden cursor-pointer group bg-neutral-100" onclick="openModal('Imagen003.png', 'Molino SAG para Minería', 'Desarrollado para pruebas experimentales de conminución y molienda a escala de laboratorio.')">
+                <div class="h-32 overflow-hidden relative bg-neutral-200">
+                    <img src="Imagen003.png" alt="Molino SAG" class="w-full h-full object-cover group-hover:scale-105 transition-transform" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=400&q=80'">
                 </div>
+                <div class="p-2 text-center text-xs font-bold truncate">Molino SAG</div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="border border-black/10 rounded-lg overflow-hidden cursor-pointer group bg-neutral-100" onclick="openModal('Imagen005.png', 'Cristalizador USACH', 'Reactor especializado con control térmico e instrumentación directa.')">
+                <div class="h-32 overflow-hidden relative bg-neutral-200">
+                    <img src="Imagen005.png" alt="Cristalizador" class="w-full h-full object-cover group-hover:scale-105 transition-transform" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=400&q=80'">
+                </div>
+                <div class="p-2 text-center text-xs font-bold truncate">Cristalizador USACH</div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="border border-black/10 rounded-lg overflow-hidden cursor-pointer group bg-neutral-100" onclick="openModal('Imagen007.png', 'Experimento de Darcy', 'Banco hidráulico para estudio de fluidos en medios porosos.')">
+                <div class="h-32 overflow-hidden relative bg-neutral-200">
+                    <img src="Imagen007.png" alt="Darcy" class="w-full h-full object-cover group-hover:scale-105 transition-transform" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&q=80'">
+                </div>
+                <div class="p-2 text-center text-xs font-bold truncate">Experimento Darcy</div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="border border-black/10 rounded-lg overflow-hidden cursor-pointer group bg-neutral-100" onclick="openModal('Imagen008.png', 'Equipo Experimental U. de Chile', 'Cámara transparente con sensores para análisis electroquímico.')">
+                <div class="h-32 overflow-hidden relative bg-neutral-200">
+                    <img src="Imagen008.png" alt="U Chile" class="w-full h-full object-cover group-hover:scale-105 transition-transform" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400&q=80'">
+                </div>
+                <div class="p-2 text-center text-xs font-bold truncate">Cámara U. de Chile</div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="border border-black/10 rounded-lg overflow-hidden cursor-pointer group bg-neutral-100" onclick="openModal('Imagen014.png', 'Columna AMINPRO', 'Sistema modular de gran altura para pruebas metalúrgicas.')">
+                <div class="h-32 overflow-hidden relative bg-neutral-200">
+                    <img src="Imagen014.png" alt="Aminpro" class="w-full h-full object-cover group-hover:scale-105 transition-transform" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=400&q=80'">
+                </div>
+                <div class="p-2 text-center text-xs font-bold truncate">Columna Aminpro</div>
+            </div>
+
+            <!-- Item 7 -->
+            <div class="border border-black/10 rounded-lg overflow-hidden cursor-pointer group bg-neutral-100" onclick="openModal('Imagen006.png', 'Electrocelda Mistop®', 'Equipo para electrometalurgia enfocado en supresión de niebla.')">
+                <div class="h-32 overflow-hidden relative bg-neutral-200">
+                    <img src="Imagen006.png" alt="Mistop" class="w-full h-full object-cover group-hover:scale-105 transition-transform" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400&q=80'">
+                </div>
+                <div class="p-2 text-center text-xs font-bold truncate">Electrocelda Mistop</div>
+            </div>
+
+            <!-- Item 8 -->
+            <div class="border border-black/10 rounded-lg overflow-hidden cursor-pointer group bg-neutral-100" onclick="openModal('Imagen010.png', 'Manifold Multilínea', 'Cilindro con múltiples llaves de paso para control de flujos.')">
+                <div class="h-32 overflow-hidden relative bg-neutral-200">
+                    <img src="Imagen010.png" alt="Manifold" class="w-full h-full object-cover group-hover:scale-105 transition-transform" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=400&q=80'">
+                </div>
+                <div class="p-2 text-center text-xs font-bold truncate">Manifold Acrílico</div>
             </div>
         </div>
+    </section>
+
+    <!-- CONTACTO RÁPIDO -->
+    <section id="contacto" class="py-12 px-4 max-w-xl mx-auto border-t border-black/10">
+        <h2 class="text-xl font-bold uppercase tracking-wider text-center mb-6">Contacto</h2>
+        <form id="contact-form" class="space-y-4">
+            <div>
+                <input type="text" required placeholder="Tu Nombre / Institución" class="w-full bg-neutral-50 border border-black/20 rounded-lg px-4 py-2.5 text-xs focus:outline-none focus:border-black">
+            </div>
+            <div>
+                <input type="email" required placeholder="Correo electrónico" class="w-full bg-neutral-50 border border-black/20 rounded-lg px-4 py-2.5 text-xs focus:outline-none focus:border-black">
+            </div>
+            <div>
+                <textarea rows="3" required placeholder="Detalles de tu requerimiento..." class="w-full bg-neutral-50 border border-black/20 rounded-lg px-4 py-2.5 text-xs focus:outline-none focus:border-black"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-black text-white py-3 rounded-lg font-bold text-xs uppercase tracking-wider hover:bg-neutral-800 transition-all">
+                Enviar Mensaje
+            </button>
+            <p id="form-success" class="hidden text-center text-xs text-emerald-600 font-semibold">¡Enviado con éxito!</p>
+        </form>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-black border-t border-gray-800 py-12 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-            <div class="flex items-center gap-3">
-                <img src="logo.png" alt="CUSTOMTECH Logo" class="h-8 w-auto object-contain filter invert" onerror="this.style.display='none';">
-                <span class="text-lg font-bold text-white tracking-wider">CUSTOM<span class="text-gray-400">TECH</span></span>
-            </div>
-            <p class="text-xs text-gray-400">© 2026 CUSTOMTECH. Todos los derechos reservados. Equipos custom-made para I+D e Innovación.</p>
-            <div class="flex items-center gap-4 text-gray-300">
-                <a href="https://wa.me/56984029443" target="_blank" class="hover:text-white transition-colors"><i class="fab fa-whatsapp text-lg"></i></a>
-                <a href="mailto:contacto@customtech.cl" class="hover:text-white transition-colors"><i class="fas fa-envelope text-lg"></i></a>
-            </div>
-        </div>
+    <footer class="bg-black text-white py-6 px-4 text-center text-xs">
+        <p>© 2026 CUSTOMTECH. Equipos I+D.</p>
     </footer>
 
-    <!-- BOTÓN FLOTANTE WHATSAPP -->
-    <a href="https://wa.me/56984029443" target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110" aria-label="WhatsApp">
-        <i class="fab fa-whatsapp text-3xl"></i>
-    </a>
-
-    <!-- MODAL DE GALERÍA (LIGHTBOX) -->
-    <div id="image-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
-        <div class="bg-white border border-gray-300 max-w-2xl w-full rounded-2xl overflow-hidden relative shadow-2xl">
-            <button onclick="closeModal()" class="absolute top-4 right-4 z-10 w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-black hover:bg-gray-200 transition-colors">
+    <!-- MODAL (ZOOM DE IMAGEN) -->
+    <div id="image-modal" class="fixed inset-0 z-50 bg-black/80 hidden items-center justify-center p-4">
+        <div class="bg-white max-w-lg w-full rounded-xl overflow-hidden relative p-4">
+            <button onclick="closeModal()" class="absolute top-3 right-3 w-8 h-8 bg-neutral-100 rounded-full flex items-center justify-center text-black font-bold z-10">
                 <i class="fas fa-times"></i>
             </button>
-            <div class="h-72 sm:h-96 bg-gray-50 relative flex items-center justify-center p-2">
-                <img id="modal-img" src="" alt="Detalle del proyecto" class="max-h-full max-w-full object-contain">
+            <div class="h-64 sm:h-80 bg-neutral-50 flex items-center justify-center mb-4 mt-2">
+                <img id="modal-img" src="" alt="Detalle" class="max-h-full max-w-full object-contain">
             </div>
-            <div class="p-6 space-y-2">
-                <h3 id="modal-title" class="text-xl font-bold text-black"></h3>
-                <p id="modal-desc" class="text-sm text-gray-600 leading-relaxed"></p>
-            </div>
+            <h3 id="modal-title" class="font-bold text-sm mb-1"></h3>
+            <p id="modal-desc" class="text-xs text-neutral-600"></p>
         </div>
     </div>
 
-    <!-- SCRIPTS INTERACTIVOS -->
+    <!-- SCRIPT -->
     <script>
-        // Menú móvil
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Filtrado de Galería
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => {
-                    b.classList.remove('bg-black', 'text-white', 'font-bold');
-                    b.classList.add('bg-gray-200', 'text-gray-800', 'font-semibold');
-                });
-                btn.classList.remove('bg-gray-200', 'text-gray-800', 'font-semibold');
-                btn.classList.add('bg-black', 'text-white', 'font-bold');
-
-                const filter = btn.getAttribute('data-filter');
-                galleryItems.forEach(item => {
-                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-
-        // Lightbox Modal para Galería en Miniatura
         const modal = document.getElementById('image-modal');
         const modalImg = document.getElementById('modal-img');
         const modalTitle = document.getElementById('modal-title');
@@ -567,21 +218,16 @@
         }
 
         modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeModal();
-            }
+            if (e.target === modal) closeModal();
         });
 
-        // Simulación envío de formulario
         const contactForm = document.getElementById('contact-form');
         const formSuccess = document.getElementById('form-success');
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             formSuccess.classList.remove('hidden');
             contactForm.reset();
-            setTimeout(() => {
-                formSuccess.classList.add('hidden');
-            }, 5000);
+            setTimeout(() => formSuccess.classList.add('hidden'), 4000);
         });
     </script>
 </body>
